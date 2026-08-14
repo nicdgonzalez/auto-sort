@@ -1,3 +1,4 @@
+# Java
 .gradle/
 build/
 
@@ -7,3 +8,6 @@ run/
 .classpath
 .project
 .settings/
+
+# Python
+.venv
