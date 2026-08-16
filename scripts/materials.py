@@ -110,6 +110,10 @@ def is_even(n: int) -> bool:
 
 def is_skippable_row(constant: str, description: str) -> bool:
     """Returns `True` if a table row is not required for our project."""
+    # The `AIR` material is filtered out in our plugin code to align items
+    # to the top left corner of an inventory. We could leave it in, but
+    # we would have to create an extra category for it at the end so it always
+    # sorts to the back. It is easier to just filter it out on both ends.
     return constant.startswith("LEGACY_") or constant == "AIR"
 
 
