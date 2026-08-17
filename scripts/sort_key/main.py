@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 
+"""
+Generates the contents for `SortKey.java`.
+
+## Usage
+
+```bash
+./scripts/sort_key/main.py --input ./materials.txt > ./src/main/java/io/github/nicdgonzalez/autosort/SortKey.java
+```
+"""
+
 import argparse
 import pathlib
 import textwrap
@@ -27,7 +37,6 @@ public record SortKey(
         int category,
         int family,
         int variant) {{
-    /** Mapping for `Material` names to `SortKey`s. */
     private static Map<String, SortKey> BY_NAME = new HashMap<>();
 
     static {{
@@ -41,7 +50,7 @@ public record SortKey(
 """
 
 SORTKEY_JAVA_LINE = (
-    "BY_NAME.put({0}, new SortKey({1.category}, {1.family}, {1.variant});"
+    'BY_NAME.put("{0}", new SortKey({1.category}, {1.family}, {1.variant}));'
 )
 
 
@@ -53,7 +62,7 @@ def main() -> None:
     sort_keys = get_sort_keys(materials)
     lines = [
         textwrap.indent(
-            SORTKEY_JAVA_LINE.format(repr(material), sort_key), prefix=" " * 8
+            SORTKEY_JAVA_LINE.format(material, sort_key), prefix=" " * 8
         )
         for material, sort_key in sort_keys.items()
     ]
