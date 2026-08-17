@@ -19,7 +19,7 @@ This script outputs a new-line-terminated list of Material` constants
 to stdout. To save it to a file, redirect the stream to the target path:
 
 ```bash
-./materials.py > ./materials.txt
+./scripts/materials.py > ./materials.txt
 ```
 """
 
