@@ -34,75 +34,11 @@ public class AutoSort extends JavaPlugin implements Listener {
     /** Unique name that the item must have to trigger sorting. */
     private static final Component TARGET_NAME = Component.text("Auto Sort");
 
-    /** Determines different priorities for the items being sorted. */
-    private record SortKey(
-            // Categories:
-            // 0: Building blocks
-            // 1: Colored blocks
-            // 2: Natural blocks
-            // 3: Functional blocks
-            // 4: Redstone blocks
-            // 5: Tools and Utilities
-            // 6: Combat
-            // 7: Food and Drinks
-            // 8: Ingredients
-            // 9: Spawn Eggs
-
-            /** Building blocks, colored blocks, functional blocks, etc. */
-            int category,
-
-            /** Wood, Stone, Wool, etc. */
-            int family,
-
-            /** Block, stair, slab, etc. */
-            int variant) {
-    }
-
     /** For grouping and sorting items based on `SortKey`. */
     private static final Comparator<SortKey> SORT_KEY_COMPARATOR = Comparator
             .comparingInt(SortKey::category)
             .thenComparingInt(SortKey::family)
             .thenComparingInt(SortKey::variant);
-
-    // TODO: I don't want to maintain a hardcoded list of material names...
-    // dear reader, if you know a better way, please let me know.
-
-    /** Different wood types */
-    private static final List<String> WOOD_TYPES = List.of(
-            "OAK",
-            "SPRUCE",
-            "BIRCH",
-            "JUNGLE",
-            "ACACIA",
-            "DARK_OAK",
-            "MANGROVE",
-            "CHERRY",
-            "BAMBOO",
-            "CRIMSON",
-            "WARPED");
-
-    /** Prefix for stripped wood */
-    private static final String WOOD_PREFIX_STRIPPED = "STRIPPED_";
-
-    private static final List<String> WOOD_VARIANTS = List.of(
-            "LOG",
-            "WOOD",
-            // Stripped is more like a separate wood type, but we want it to be
-            // grouped next to the non-stripped kind, so we handle it like a variant.
-            "STRIPPED",
-            "PLANKS",
-            "STAIRS",
-            "SLAB",
-            "FENCE",
-            "FENCE_GATE",
-            "DOOR",
-            "TRAPDOOR",
-            "PRESSURE_PLATE",
-            "BUTTON",
-            "SIGN",
-            "HANGING_SIGN",
-            "BOAT",
-            "CHEST_BOAT");
 
     @Override
     public void onEnable() {
@@ -131,6 +67,7 @@ public class AutoSort extends JavaPlugin implements Listener {
         }
 
         ItemStack item = event.getCurrentItem();
+        event.getWhoClicked().sendMessage(String.format("Clicked: %s", item.getType()));
 
         if (!isAutoSortItem(item)) {
             return;
@@ -237,31 +174,7 @@ public class AutoSort extends JavaPlugin implements Listener {
 
     /** Determines how items get sorted. */
     private SortKey getSortKey(Material material) {
-        String name = material.name();
-
-        for (int family = 0; family < WOOD_TYPES.size(); family++) {
-            String wood = WOOD_TYPES.get(family);
-
-            if (name.contains(wood + "_")) {
-                String variantSubstring;
-
-                if (name.startsWith(WOOD_PREFIX_STRIPPED)) {
-                    variantSubstring = name.substring(WOOD_PREFIX_STRIPPED.length() + wood.length() + 1);
-                } else {
-                    variantSubstring = name.substring(wood.length() + 1);
-                }
-
-                int variant = WOOD_VARIANTS.indexOf(variantSubstring);
-
-                if (variant != -1) {
-                    return new SortKey(0, family, variant);
-                }
-            }
-        }
-
-        return new SortKey(
-                1,
-                0,
-                material.ordinal());
+        // Throwing if `null` because all materials /should/ return a value.
+        return SortKey.byName(material.name()).orElseThrow();
     }
 }
