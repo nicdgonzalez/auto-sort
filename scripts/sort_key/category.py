@@ -13,3 +13,4 @@ class Category(enum.Enum):
     INGREDIENTS = enum.auto()
     SPAWN_EGGS = enum.auto()
     OTHER = enum.auto()
+    UNSORTED = enum.auto()

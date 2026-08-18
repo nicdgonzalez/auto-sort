@@ -60,11 +60,13 @@ def main() -> None:
     # to `cast` if we want the Language Server to know what it's looking at.
     materials = cast(pathlib.Path, args.input).read_text().splitlines()
     sort_keys = get_sort_keys(materials)
+    sort_keys = list(sort_keys.items())
+    sort_keys.sort(key=lambda e: e[1])
     lines = [
         textwrap.indent(
             SORTKEY_JAVA_LINE.format(material, sort_key), prefix=" " * 8
         )
-        for material, sort_key in sort_keys.items()
+        for material, sort_key in sort_keys
     ]
     contents = "\n".join(lines).strip()
     file = SORTKEY_JAVA.format(contents)

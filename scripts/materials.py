@@ -114,7 +114,13 @@ def is_skippable_row(constant: str, description: str) -> bool:
     # to the top left corner of an inventory. We could leave it in, but
     # we would have to create an extra category for it at the end so it always
     # sorts to the back. It is easier to just filter it out on both ends.
-    return constant.startswith("LEGACY_") or constant == "AIR"
+    return (
+        constant.startswith("LEGACY_")
+        or constant.startswith("POTTED_")
+        or constant.endswith("_WALL_SKULL")
+        or constant.endswith("_WALL_HEAD")
+        or constant == "AIR"
+    )
 
 
 if __name__ == "__main__":
