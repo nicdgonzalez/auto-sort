@@ -1,6 +1,7 @@
 package io.github.nicdgonzalez.autosort;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -32,7 +33,7 @@ public class AutoSort extends JavaPlugin implements Listener {
     /** Item to click to trigger sorting. */
     private static final Material TARGET_TYPE = Material.PAPER;
     /** Unique name that the item must have to trigger sorting. */
-    private static final Component TARGET_NAME = Component.text("Auto Sort");
+    private static final Component TARGET_NAME = Component.text("Sort");
 
     /** For grouping and sorting items based on `SortKey`. */
     private static final Comparator<SortKey> SORT_KEY_COMPARATOR = Comparator
@@ -67,7 +68,6 @@ public class AutoSort extends JavaPlugin implements Listener {
         }
 
         ItemStack item = event.getCurrentItem();
-        event.getWhoClicked().sendMessage(String.format("Clicked: %s", item.getType()));
 
         if (!isAutoSortItem(item)) {
             return;
@@ -174,7 +174,12 @@ public class AutoSort extends JavaPlugin implements Listener {
 
     /** Determines how items get sorted. */
     private SortKey getSortKey(Material material) {
-        // Throwing if `null` because all materials /should/ return a value.
-        return SortKey.byName(material.name()).orElseThrow();
+        Optional<SortKey> key = SortKey.byName(material.name());
+
+        if (key.isEmpty()) {
+            this.getLogger().warning(String.format("Failed to sort item: %s", material.name()));
+        }
+
+        return key.orElse(new SortKey(99, 0, material.ordinal()));
     }
 }
