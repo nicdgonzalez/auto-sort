@@ -9,5 +9,9 @@ run/
 .project
 .settings/
 
+# Generated files
+materials.txt
+SortKey.java
+
 # Python
 .venv
