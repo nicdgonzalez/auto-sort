@@ -12,3 +12,4 @@ class Category(enum.Enum):
     FOOD_AND_DRINKS = enum.auto()
     INGREDIENTS = enum.auto()
     SPAWN_EGGS = enum.auto()
+    OTHER = enum.auto()
