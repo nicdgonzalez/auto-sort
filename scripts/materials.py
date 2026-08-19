@@ -24,7 +24,7 @@ to stdout. To save it to a file, redirect the stream to the target path:
 """
 
 import itertools
-from typing import Iterator
+from typing import Iterator, cast
 
 import bs4
 import requests
@@ -68,11 +68,13 @@ def extract_constants_from_documentation(html: str) -> Iterator[str]:
 
 def is_success(response: requests.Response) -> bool:
     """Returns `True` if the status code is between 200 and 299."""
+    assert isinstance(response.status_code, int)
     return 200 <= response.status_code <= 299
 
 
 def is_client_error(response: requests.Response) -> bool:
     """Returns `True` if the status code is between 400 and 499."""
+    assert isinstance(response.status_code, int)
     return 400 <= response.status_code <= 499
 
 
@@ -82,7 +84,10 @@ def into_rows(
     """Groups a table's children into logical rows."""
     # For some reason, there is a blank element before each column.
     children = strip_extra_children(children)
-    return itertools.batched(children, 2)
+    return cast(
+        Iterator[tuple[bs4.PageElement, bs4.PageElement]],
+        itertools.batched(children, 2),
+    )
 
 
 def strip_extra_children(
