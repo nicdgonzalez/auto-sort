@@ -39,7 +39,8 @@ public class AutoSort extends JavaPlugin implements Listener {
     private static final Comparator<SortKey> SORT_KEY_COMPARATOR = Comparator
             .comparingInt(SortKey::category)
             .thenComparingInt(SortKey::family)
-            .thenComparingInt(SortKey::variant);
+            .thenComparingInt(SortKey::shape)
+            .thenComparingInt(SortKey::modifier);
 
     @Override
     public void onEnable() {
@@ -180,6 +181,6 @@ public class AutoSort extends JavaPlugin implements Listener {
             this.getLogger().warning(String.format("Failed to sort item: %s", material.name()));
         }
 
-        return key.orElse(new SortKey(99, 0, material.ordinal()));
+        return key.orElse(new SortKey(99, 0, material.ordinal(), 0));
     }
 }
