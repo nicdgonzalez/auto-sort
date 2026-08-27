@@ -20,7 +20,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
 
 public class AutoSort extends JavaPlugin implements Listener {
     /** Inventory types that can be sorted. */
@@ -33,7 +33,7 @@ public class AutoSort extends JavaPlugin implements Listener {
     /** Item to click to trigger sorting. */
     private static final Material TARGET_TYPE = Material.PAPER;
     /** Unique name that the item must have to trigger sorting. */
-    private static final Component TARGET_NAME = Component.text("Sort");
+    private static final String TARGET_NAME = "Sort";
 
     /** For grouping and sorting items based on `SortKey`. */
     private static final Comparator<SortKey> SORT_KEY_COMPARATOR = Comparator
@@ -89,7 +89,9 @@ public class AutoSort extends JavaPlugin implements Listener {
             return false;
         }
 
-        return item.getType() == TARGET_TYPE && meta.customName().equals(TARGET_NAME);
+        String customName = PlainTextComponentSerializer.plainText().serialize(meta.customName());
+
+        return item.getType() == TARGET_TYPE && customName.equalsIgnoreCase(TARGET_NAME);
     }
 
     /** Sorts all of the items in the given `inventory`. */
