@@ -1,0 +1,7 @@
+name: AutoSort
+version: 0.1.0
+main: io.github.nicdgonzalez.autosort.AutoSort
+description: Minecraft plugin to automatically sort Minecraft chests.
+author: Nicolas Gonzalez
+website: https://github.com/nicdgonzalez/autosort
+api-version: "26.2"

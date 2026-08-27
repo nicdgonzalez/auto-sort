@@ -1,0 +1,9 @@
+[package]
+name = "material-core"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+material-derive = { version = "0.1.0", path = "../material-derive" }
+serde = { version = "1.0.229", features = ["derive"] }
+strum = { version = "0.28.0", features = ["derive"] }
