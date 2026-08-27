@@ -1,0 +1,3057 @@
+# If you are trying to modify `precedence`, you order whatever is _below_
+# your current scope:
+#
+# [profile]
+# ↓
+# Category
+# ↓
+# Family
+# ↓
+# Shape
+# ↓
+# Modifier
+# ↓
+# Specific modifier group(s)
+
+order = [
+    "BUILDING_BLOCKS",
+    "COLORED_BLOCKS",
+    "NATURAL_BLOCKS",
+    "FUNCTIONAL_BLOCKS",
+    "REDSTONE_BLOCKS",
+    "TOOLS_AND_UTILITIES",
+    "COMBAT",
+    "FOOD_AND_DRINKS",
+    "INGREDIENTS",
+    "SPAWN_EGGS",
+]
+
+[category.BUILDING_BLOCKS]
+precedence = ["FAMILY", "SHAPE", "MODIFIER"]
+order = [
+    "OAK",
+    "SPRUCE",
+    "BIRCH",
+    "JUNGLE",
+    "ACACIA",
+    "DARK_OAK",
+    "MANGROVE",
+    "CHERRY",
+    "PALE_OAK",
+    "BAMBOO",
+    "BAMBOO_MOSAIC",
+    "CRIMSON",
+    "WARPED",
+    "STONE",
+    "COBBLESTONE",
+    "STONE_BRICKS",
+    "GRANITE",
+    "DIORITE",
+    "ANDESITE",
+    "DEEPSLATE",
+    "DEEPSLATE_BRICKS",
+    "DEEPSLATE_TILES",
+    "TUFF",
+    "TUFF_BRICKS",
+    "BRICKS",
+    "MUD",
+    "MUD_BRICKS",
+    "RESIN_BRICKS",
+    "SANDSTONE",
+    "RED_SANDSTONE",
+    "CINNABAR",
+    "CINNABAR_BRICKS",
+    "SULFUR",
+    "SULFUR_BRICKS",
+    "PRISMARINE",
+    "PRISMARINE_BRICKS",
+    "NETHER_BRICKS",
+    "RED_NETHER_BRICKS",
+    "BASALT",
+    "BLACKSTONE",
+    "BLACKSTONE_BRICKS",
+    "END_STONE",
+    "END_STONE_BRICKS",
+    "PURPUR",
+    "IRON",
+    "GOLD",
+    "EMERALD",
+    "LAPIS",
+    "DIAMOND",
+    "NETHERITE",
+    "QUARTZ",
+]
+
+[category.COLORED_BLOCKS]
+precedence = ["FAMILY", "MODIFIER", "SHAPE"]
+order = [
+    "WOOL",
+    "CARPET",
+    "TERRACOTTA",
+    "CONCRETE",
+    "CONCRETE_POWDER",
+    "GLAZED_TERRACOTTA",
+    "GLASS",
+    "GLASS_PANE",
+    "SHULKER",
+    "BED",
+    "CANDLE",
+    "BANNER",
+    "DYE",
+]
+
+[category.NATURAL_BLOCKS]
+precedence = ["FAMILY", "SHAPE", "MODIFIER"]
+order = [
+    "GRASS",
+    "PODZOL",
+    "MYCELIUM",
+    "DIRT",
+    "FARMLAND",
+    "CLAY",
+    "GRAVEL",
+    "SAND",
+    "RED_SAND",
+    "ICE",
+    "SNOW",
+    "MOSS",
+    "PALE_MOSS",
+    "PALE_HANGING_MOSS",
+    "CALCITE",
+    "DRIPSTONE",
+    "SULFUR",
+    "MAGMA",
+    "OBSIDIAN",
+    "NETHERRACK",
+    "CRIMSON",
+    "WARPED",
+    "SOUL",
+    "COAL",
+    "IRON",
+    "COPPER",
+    "GOLD",
+    "REDSTONE",
+    "EMERALD",
+    "LAPIS",
+    "DIAMOND",
+    "QUARTZ",
+    "AMETHYST",
+    "OAK",
+    "SPRUCE",
+    "BIRCH",
+    "JUNGLE",
+    "ACACIA",
+    "DARK_OAK",
+    "MANGROVE",
+    "CHERRY",
+    "PALE_OAK",
+    "AZALEA",
+    "MUSHROOM",
+    "DANDELION",
+    "POPPY",
+    "BLUE_ORCHID",
+    "ALLIUM",
+    "AZURE_BLUET",
+    "RED_TULIP",
+    "ORANGE_TULIP",
+    "WHITE_TULIP",
+    "PINK_TULIP",
+    "OXEYE_DAISY",
+    "CORNFLOWER",
+    "LILY_OF_THE_VALLEY",
+    "TORCHFLOWER",
+    "PITCHER",
+    "CACTUS",
+    "EYEBLOSSOM",
+    "WITHER_ROSE",
+    "PINK_PETALS",
+    "WILDFLOWERS",
+    "LEAF_LITTER",
+    "SPORE_BLOSSOM",
+    "FIREFLY_BUSH",
+    "BAMBOO",
+    "SUGAR_CANE",
+    "CRIMSON_ROOTS",
+    "WARPED_ROOTS",
+    "NETHER_SPROUTS",
+    "VINES",
+    "VINE",
+    "FERN",
+    "BUSH",
+    "SUNFLOWER",
+    "LILAC",
+    "ROSE_BUSH",
+    "PEONY",
+    "DRIPLEAF",
+    "CHORUS",
+    "GLOW_LICHEN",
+    "HANGING_ROOTS",
+    "FROGSPAWN",
+    "EGG",
+    "DRIED_GHAST",
+    "COCOA_BEANS",
+    "PUMPKIN",
+    "JACK_O_LANTERN",
+    "MELON",
+    "BEETROOT",
+    "NETHER_WART",
+    "LILY_PAD",
+    "SEAGRASS",
+    "SEA_PICKLE",
+    "KELP",
+    "CORAL",
+    "SPONGE",
+    "HAY",
+    "BEE_NEST",
+    "HONEYCOMB",
+    "SLIME",
+    "HONEY",
+    "RESIN",
+    "SCULK",
+    "COBWEB",
+    "BEDROCK",
+]
+
+[category.FUNCTIONAL_BLOCKS]
+precedence = ["FAMILY", "SHAPE", "MODIFIER"]
+order = [
+    "TORCH",
+    "LANTERN",
+    "CHAIN",
+    "END_ROD",
+    "SEA_LANTERN",
+    "COPPER",
+    "GLOWSTONE",
+    "SHROOMLIGHT",
+    "FROGLIGHT",
+    "CRAFTING_TABLE",
+    "STONECUTTER",
+    "CARTOGRAPHY_TABLE",
+    "FLETCHING_TABLE",
+    "SMITHING_TABLE",
+    "GRINDSTONE",
+    "LOOM",
+    "FURNACE",
+    "SMOKER",
+    "BLAST_FURNACE",
+    "CAMPFIRE",
+    "ANVIL",
+    "COMPOSTER",
+    "NOTE_BLOCK",
+    "JUKEBOX",
+    "ENCHANTING_TABLE",
+    "BREWING_STAND",
+    "CAULDRON",
+    "BELL",
+    "BEACON",
+    "CONDUIT",
+    "LODESTONE",
+    "LADDER",
+    "SCAFFOLDING",
+    "BEEHIVE",
+    "LIGHTNING_ROD",
+    "POT",
+    "ARMOR_STAND",
+    "ITEM_FRAME",
+    "PAINTING",
+    "BOOKSHELF",
+    "OAK",
+    "SPRUCE",
+    "BIRCH",
+    "JUNGLE",
+    "ACACIA",
+    "DARK_OAK",
+    "MANGROVE",
+    "CHERRY",
+    "PALE_OAK",
+    "BAMBOO",
+    "CRIMSON",
+    "WARPED",
+    "LECTERN",
+    "RESPAWN_ANCHOR",
+    "CHEST",
+    "BARREL",
+    "SKELETON_SKULL",
+    "HEAD",
+    "END_PORTAL_FRAME",
+    "VAULT",
+]
+
+[category.REDSTONE_BLOCKS]
+precedence = ["FAMILY", "SHAPE", "MODIFIER"]
+order = [
+    "REDSTONE",
+    "REPEATER",
+    "COMPARATOR",
+    "TARGET",
+    "LEVER",
+    "LIGHT_WEIGHTED_PRESSURE_PLATE",
+    "HEAVY_WEIGHTED_PRESSURE_PLATE",
+    "TRIPWIRE_HOOK",
+    "DAYLIGHT_DETECTOR",
+    "PISTON",
+    "DISPENSER",
+    "DROPPER",
+    "CRAFTER",
+    "HOPPER",
+    "OBSERVER",
+    "RAIL",
+]
+
+[category.TOOLS_AND_UTILITIES]
+precedence = ["FAMILY", "MODIFIER", "SHAPE"]
+order = [
+    "SHOVEL",
+    "PICKAXE",
+    "HOE",
+    "BUCKET",
+    "FISHING_ROD",
+    "ON_A_STICK",
+    "FLINT_AND_STEEL",
+    "SHEARS",
+    "BRUSH",
+    "NAME_TAG",
+    "LEAD",
+    "BUNDLE",
+    "COMPASS",
+    "CLOCK",
+    "SPYGLASS",
+    "MAP",
+    "WIND_CHARGE",
+    "ENDER",
+    "ELYTRA",
+    "FIREWORK_ROCKET",
+    "SADDLE",
+    "HARNESS",
+    "OAK",
+    "SPRUCE",
+    "BIRCH",
+    "JUNGLE",
+    "ACACIA",
+    "DARK_OAK",
+    "MANGROVE",
+    "CHERRY",
+    "PALE_OAK",
+    "BAMBOO",
+    "MINECART",
+    "GOAT_HORN",
+    "MUSIC_DISC",
+]
+
+[category.COMBAT]
+precedence = ["FAMILY", "SHAPE", "MODIFIER"]
+order = [
+    "SWORD",
+    "SPEAR",
+    "AXE",
+    "TRIDENT",
+    "MACE",
+    "SHIELD",
+    "HELMET",
+    "CHESTPLATE",
+    "LEGGINGS",
+    "BOOTS",
+    "HORSE_ARMOR",
+    "WOLF_ARMOR",
+    "NAUTILUS_ARMOR",
+    "TOTEM_OF_UNDYING",
+    "TNT",
+    "END_CRYSTAL",
+    "SNOWBALL",
+    "EGG",
+    "BOW",
+    "CROSSBOW",
+    "ARROW",
+]
+
+[category.FOOD_AND_DRINKS]
+precedence = ["FAMILY", "SHAPE", "MODIFIER"]
+order = [
+    "APPLE",
+    "MELON",
+    "SWEET_BERRIES",
+    "GLOW_BERRIES",
+    "CARROT",
+    "POTATO",
+    "BEETROOT",
+    "DANDELION",
+    "KELP",
+    "BEEF",
+    "PORKCHOP",
+    "MUTTON",
+    "CHICKEN",
+    "RABBIT",
+    "COD",
+    "SALMON",
+    "TROPICAL_FISH",
+    "PUFFERFISH",
+    "BREAD",
+    "COOKIE",
+    "CAKE",
+    "PUMPKIN",
+    "ROTTEN_FLESH",
+    "SPIDER_EYE",
+    "SOUP",
+    "STEW",
+    "BOTTLE",
+    "POTION",
+]
+
+[category.INGREDIENTS]
+precedence = ["FAMILY", "SHAPE", "MODIFIER"]
+order = [
+    "COAL",
+    "CHARCOAL",
+    "COPPER",
+    "IRON",
+    "GOLD",
+    "EMERALD",
+    "LAPIS",
+    "DIAMOND",
+    "ANCIENT_DEBRIS",
+    "QUARTZ",
+    "AMETHYST",
+    "NETHERITE",
+    "STICK",
+    "FLINT",
+    "WHEAT",
+    "BONE",
+    "STRING",
+    "FEATHER",
+    "LEATHER",
+    "RABBIT_HIDE",
+    "HONEYCOMB",
+    "RESIN",
+    "INK_SAC",
+    "SCUTE",
+    "SLIME",
+    "CLAY",
+    "PRISMARINE",
+    "NAUTILUS_SHELL",
+    "HEART_OF_THE_SEA",
+    "FIRE_CHARGE",
+    "ROD",
+    "HEAVY_CORE",
+    "NETHER_STAR",
+    "SHULKER",
+    "ECHO_SHARD",
+    "DISC_FRAGMENT",
+    "BOWL",
+    "BRICK",
+    "NETHER",
+    "PAPER",
+    "BOOK",
+    "FIREWORK_STAR",
+    "BOTTLE",
+    "REDSTONE",
+    "GUNPOWDER",
+    "DRAGON_BREATH",
+    "SPIDER_EYE",
+    "BLAZE_POWDER",
+    "SUGAR",
+    "RABBIT_FOOT",
+    "GHAST_TEAR",
+    "PHANTOM_MEMBRANE",
+    "BANNER_PATTERN",
+    "POTTERY_SHERD",
+    "SMITHING_TEMPLATE",
+    "TRIAL_KEY",
+]
+
+[category.SPAWN_EGGS]
+precedence = ["FAMILY", "SHAPE", "MODIFIER"]
+order = ["SPAWNER", "CREAKING_HEART", "SPAWN_EGG"]
+
+[family.OAK]
+order = [
+    "LOG",
+    "WOOD",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "LEAVES",
+    "SAPLING",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "BOAT",
+    "CHEST_BOAT",
+]
+
+[family.OAK.shape.LOG]
+order = ["BASE", "STRIPPED"]
+
+[family.OAK.shape.WOOD]
+order = ["BASE", "STRIPPED"]
+
+[family.SPRUCE]
+order = [
+    "LOG",
+    "WOOD",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "LEAVES",
+    "SAPLING",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "BOAT",
+    "CHEST_BOAT",
+]
+
+[family.SPRUCE.shape.LOG]
+order = ["BASE", "STRIPPED"]
+
+[family.SPRUCE.shape.WOOD]
+order = ["BASE", "STRIPPED"]
+
+[family.BIRCH]
+order = [
+    "LOG",
+    "WOOD",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "LEAVES",
+    "SAPLING",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "BOAT",
+    "CHEST_BOAT",
+]
+
+[family.BIRCH.shape.LOG]
+order = ["BASE", "STRIPPED"]
+
+[family.BIRCH.shape.WOOD]
+order = ["BASE", "STRIPPED"]
+
+[family.JUNGLE]
+order = [
+    "LOG",
+    "WOOD",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "LEAVES",
+    "SAPLING",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "BOAT",
+    "CHEST_BOAT",
+]
+
+[family.JUNGLE.shape.LOG]
+order = ["BASE", "STRIPPED"]
+
+[family.JUNGLE.shape.WOOD]
+order = ["BASE", "STRIPPED"]
+
+[family.ACACIA]
+order = [
+    "LOG",
+    "WOOD",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "LEAVES",
+    "SAPLING",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "BOAT",
+    "CHEST_BOAT",
+]
+
+[family.ACACIA.shape.LOG]
+order = ["BASE", "STRIPPED"]
+
+[family.ACACIA.shape.WOOD]
+order = ["BASE", "STRIPPED"]
+
+[family.DARK_OAK]
+order = [
+    "LOG",
+    "WOOD",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "LEAVES",
+    "SAPLING",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "BOAT",
+    "CHEST_BOAT",
+]
+
+[family.DARK_OAK.shape.LOG]
+order = ["BASE", "STRIPPED"]
+
+[family.DARK_OAK.shape.WOOD]
+order = ["BASE", "STRIPPED"]
+
+[family.MANGROVE]
+order = [
+    "LOG",
+    "WOOD",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "LEAVES",
+    "PROPAGULE",
+    "ROOTS",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "BOAT",
+    "CHEST_BOAT",
+]
+
+[family.MANGROVE.shape.LOG]
+order = ["BASE", "STRIPPED"]
+
+[family.MANGROVE.shape.WOOD]
+order = ["BASE", "STRIPPED"]
+
+[family.MANGROVE.shape.ROOTS]
+order = ["BASE", "MUDDY"]
+
+[family.MANGROVE.shape.PROPAGULE]
+order = ["BASE"]
+
+[family.CHERRY]
+order = [
+    "LOG",
+    "WOOD",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "LEAVES",
+    "SAPLING",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "BOAT",
+    "CHEST_BOAT",
+]
+
+[family.CHERRY.shape.LOG]
+order = ["BASE", "STRIPPED"]
+
+[family.CHERRY.shape.WOOD]
+order = ["BASE", "STRIPPED"]
+
+[family.PALE_OAK]
+order = [
+    "LOG",
+    "WOOD",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "LEAVES",
+    "SAPLING",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "BOAT",
+    "CHEST_BOAT",
+]
+
+[family.PALE_OAK.shape.LOG]
+order = ["BASE", "STRIPPED"]
+
+[family.PALE_OAK.shape.WOOD]
+order = ["BASE", "STRIPPED"]
+
+[family.AZALEA]
+order = ["BASE", "LEAVES"]
+
+[family.AZALEA.shape.BASE]
+order = ["BASE", "FLOWERING"]
+
+[family.AZALEA.shape.LEAVES]
+order = ["BASE", "FLOWERING"]
+
+[family.BAMBOO]
+order = [
+    "BLOCK",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "BASE",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "CHEST_RAFT",
+    "RAFT",
+]
+
+[family.BAMBOO.shape.BLOCK]
+order = ["BASE", "STRIPPED"]
+
+[family.BAMBOO_MOSAIC]
+order = ["BASE", "STAIRS", "SLAB"]
+
+[family.CRIMSON]
+order = [
+    "STEM",
+    "HYPHAE",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "NYLIUM",
+    "FUNGUS",
+    "ROOTS",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+]
+
+[family.CRIMSON.shape.STEM]
+order = ["BASE", "STRIPPED"]
+
+[family.CRIMSON.shape.HYPHAE]
+order = ["BASE", "STRIPPED"]
+
+[family.WARPED]
+order = [
+    "STEM",
+    "HYPHAE",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "NYLIUM",
+    "WART_BLOCK",
+    "FUNGUS",
+    "ROOTS",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+]
+
+[family.WARPED.shape.STEM]
+order = ["BASE", "STRIPPED"]
+
+[family.WARPED.shape.HYPHAE]
+order = ["BASE", "STRIPPED"]
+
+[family.STONE]
+order = ["BASE", "STAIRS", "SLAB", "PRESSURE_PLATE", "BUTTON"]
+
+[family.STONE.shape.BASE]
+order = ["BASE", "SMOOTH", "INFESTED"]
+
+[family.STONE.shape.SLAB]
+order = ["BASE", "SMOOTH"]
+
+[family.COBBLESTONE]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.COBBLESTONE.shape.BASE]
+order = ["BASE", "MOSSY", "INFESTED"]
+
+[family.COBBLESTONE.shape.STAIRS]
+order = ["BASE", "MOSSY"]
+
+[family.COBBLESTONE.shape.SLAB]
+order = ["BASE", "MOSSY"]
+
+[family.COBBLESTONE.shape.WALL]
+order = ["BASE", "MOSSY"]
+
+[family.STONE_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.STONE_BRICKS.shape.BASE]
+order = [
+    "BASE",
+    "CRACKED",
+    "CHISELED",
+    "MOSSY",
+    "INFESTED",
+    "INFESTED_MOSSY",
+    "INFESTED_CRACKED",
+    "INFESTED_CHISELED",
+]
+
+[family.STONE_BRICKS.shape.STAIRS]
+order = ["BASE", "MOSSY"]
+
+[family.STONE_BRICKS.shape.SLAB]
+order = ["BASE", "MOSSY"]
+
+[family.STONE_BRICKS.shape.WALL]
+order = ["BASE", "MOSSY"]
+
+[family.GRANITE]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.GRANITE.shape.BASE]
+order = ["BASE", "POLISHED"]
+
+[family.GRANITE.shape.STAIRS]
+order = ["BASE", "POLISHED"]
+
+[family.GRANITE.shape.SLAB]
+order = ["BASE", "POLISHED"]
+
+[family.DIORITE]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.DIORITE.shape.BASE]
+order = ["BASE", "POLISHED"]
+
+[family.DIORITE.shape.STAIRS]
+order = ["BASE", "POLISHED"]
+
+[family.DIORITE.shape.SLAB]
+order = ["BASE", "POLISHED"]
+
+[family.ANDESITE]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.ANDESITE.shape.BASE]
+order = ["BASE", "POLISHED"]
+
+[family.ANDESITE.shape.STAIRS]
+order = ["BASE", "POLISHED"]
+
+[family.ANDESITE.shape.SLAB]
+order = ["BASE", "POLISHED"]
+
+[family.DEEPSLATE]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.DEEPSLATE.shape.BASE]
+order = ["BASE", "COBBLED", "CHISELED", "POLISHED", "REINFORCED", "INFESTED"]
+
+[family.DEEPSLATE.shape.STAIRS]
+order = ["BASE", "COBBLED", "POLISHED"]
+
+[family.DEEPSLATE.shape.SLAB]
+order = ["BASE", "COBBLED", "POLISHED"]
+
+[family.DEEPSLATE.shape.WALL]
+order = ["BASE", "COBBLED", "POLISHED"]
+
+[family.DEEPSLATE_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.DEEPSLATE_BRICKS.shape.BASE]
+order = ["BASE", "CRACKED"]
+
+[family.DEEPSLATE_TILES]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.DEEPSLATE_TILES.shape.BASE]
+order = ["BASE", "CRACKED"]
+
+[family.TUFF]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.TUFF.shape.BASE]
+order = ["BASE", "CHISELED", "POLISHED"]
+
+[family.TUFF.shape.STAIRS]
+order = ["BASE", "POLISHED"]
+
+[family.TUFF.shape.SLAB]
+order = ["BASE", "POLISHED"]
+
+[family.TUFF.shape.WALL]
+order = ["BASE", "POLISHED"]
+
+[family.TUFF_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.TUFF_BRICKS.shape.BASE]
+order = ["BASE", "CHISELED"]
+
+[family.BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.MUD]
+order = ["BASE"]
+
+[family.MUD.shape.BASE]
+order = ["BASE", "PACKED"]
+
+[family.MUD_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.RESIN_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.RESIN_BRICKS.shape.BASE]
+order = ["BASE", "CHISELED"]
+
+[family.SANDSTONE]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.SANDSTONE.shape.BASE]
+order = ["BASE", "CHISELED", "SMOOTH", "CUT"]
+
+[family.SANDSTONE.shape.STAIRS]
+order = ["BASE", "SMOOTH"]
+
+[family.SANDSTONE.shape.SLAB]
+order = ["BASE", "SMOOTH", "CUT"]
+
+[family.RED_SANDSTONE]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.RED_SANDSTONE.shape.BASE]
+order = ["BASE", "CHISELED", "SMOOTH", "CUT"]
+
+[family.RED_SANDSTONE.shape.STAIRS]
+order = ["BASE", "SMOOTH"]
+
+[family.RED_SANDSTONE.shape.SLAB]
+order = ["BASE", "SMOOTH", "CUT"]
+
+[family.CINNABAR]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.CINNABAR.shape.BASE]
+order = ["BASE", "CHISELED", "POLISHED"]
+
+[family.CINNABAR.shape.STAIRS]
+order = ["BASE", "POLISHED"]
+
+[family.CINNABAR.shape.SLAB]
+order = ["BASE", "POLISHED"]
+
+[family.CINNABAR.shape.WALL]
+order = ["BASE", "POLISHED"]
+
+[family.CINNABAR_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.SULFUR]
+order = ["BASE", "STAIRS", "SLAB", "WALL", "SPIKE"]
+
+[family.SULFUR.shape.BASE]
+order = ["BASE", "CHISELED", "POLISHED"]
+
+[family.SULFUR.shape.STAIRS]
+order = ["BASE", "POLISHED"]
+
+[family.SULFUR.shape.SLAB]
+order = ["BASE", "POLISHED"]
+
+[family.SULFUR.shape.WALL]
+order = ["BASE", "POLISHED"]
+
+[family.SULFUR_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.SEA_LANTERN]
+order = ["BASE"]
+
+[family.PRISMARINE]
+order = ["BASE", "STAIRS", "SLAB", "WALL", "CRYSTALS", "SHARD"]
+
+[family.PRISMARINE.shape.BASE]
+order = ["BASE", "DARK"]
+
+[family.PRISMARINE.shape.STAIRS]
+order = ["BASE", "DARK"]
+
+[family.PRISMARINE.shape.SLAB]
+order = ["BASE", "DARK"]
+
+[family.PRISMARINE_BRICKS]
+order = ["BASE", "STAIRS", "SLAB"]
+
+[family.NETHERRACK]
+order = ["BASE"]
+
+[family.NETHER_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL", "FENCE"]
+
+[family.NETHER_BRICKS.shape.BASE]
+order = ["BASE", "CRACKED", "CHISELED"]
+
+[family.RED_NETHER_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.BASALT]
+order = ["BASE"]
+
+[family.BASALT.shape.BASE]
+order = ["BASE", "SMOOTH", "POLISHED"]
+
+[family.BLACKSTONE]
+order = ["BASE", "STAIRS", "SLAB", "WALL", "PRESSURE_PLATE", "BUTTON"]
+
+[family.BLACKSTONE.shape.BASE]
+order = ["BASE", "GILDED", "POLISHED", "CHISELED_POLISHED"]
+
+[family.BLACKSTONE.shape.STAIRS]
+order = ["BASE", "POLISHED"]
+
+[family.BLACKSTONE.shape.SLAB]
+order = ["BASE", "POLISHED"]
+
+[family.BLACKSTONE.shape.WALL]
+order = ["BASE", "POLISHED"]
+
+[family.BLACKSTONE.shape.PRESSURE_PLATE]
+order = ["BASE", "POLISHED"]
+
+[family.BLACKSTONE.shape.BUTTON]
+order = ["BASE", "POLISHED"]
+
+[family.BLACKSTONE_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.BLACKSTONE_BRICKS.shape.BASE]
+order = ["BASE", "POLISHED", "CRACKED", "CRACKED_POLISHED"]
+
+[family.BLACKSTONE_BRICKS.shape.STAIRS]
+order = ["BASE", "POLISHED"]
+
+[family.BLACKSTONE_BRICKS.shape.SLAB]
+order = ["BASE", "POLISHED"]
+
+[family.BLACKSTONE_BRICKS.shape.WALL]
+order = ["BASE", "POLISHED"]
+
+[family.END_STONE]
+order = ["BASE"]
+
+[family.END_STONE_BRICKS]
+order = ["BASE", "STAIRS", "SLAB", "WALL"]
+
+[family.PURPUR]
+order = ["BLOCK", "PILLAR", "STAIRS", "SLAB"]
+
+[family.WOOL]
+order = ["BASE"]
+
+[family.WOOL.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.CARPET]
+order = ["BASE"]
+
+[family.CARPET.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.TERRACOTTA]
+order = ["BASE"]
+
+[family.TERRACOTTA.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.CONCRETE]
+order = ["BASE"]
+
+[family.CONCRETE.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.CONCRETE_POWDER]
+order = ["BASE"]
+
+[family.CONCRETE_POWDER.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.GLAZED_TERRACOTTA]
+order = ["BASE"]
+
+[family.GLAZED_TERRACOTTA.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.GLASS]
+order = ["BASE"]
+
+[family.GLASS.shape.BASE]
+order = [
+    "BASE",
+    "TINTED",
+    "WHITE_STAINED",
+    "LIGHT_GRAY_STAINED",
+    "GRAY_STAINED",
+    "BLACK_STAINED",
+    "BROWN_STAINED",
+    "RED_STAINED",
+    "ORANGE_STAINED",
+    "YELLOW_STAINED",
+    "LIME_STAINED",
+    "GREEN_STAINED",
+    "CYAN_STAINED",
+    "LIGHT_BLUE_STAINED",
+    "BLUE_STAINED",
+    "PURPLE_STAINED",
+    "MAGENTA_STAINED",
+    "PINK_STAINED",
+]
+
+[family.GLASS_PANE]
+order = ["BASE"]
+
+[family.GLASS_PANE.shape.BASE]
+order = [
+    "BASE",
+    "WHITE_STAINED",
+    "LIGHT_GRAY_STAINED",
+    "GRAY_STAINED",
+    "BLACK_STAINED",
+    "BROWN_STAINED",
+    "RED_STAINED",
+    "ORANGE_STAINED",
+    "YELLOW_STAINED",
+    "LIME_STAINED",
+    "GREEN_STAINED",
+    "CYAN_STAINED",
+    "LIGHT_BLUE_STAINED",
+    "BLUE_STAINED",
+    "PURPLE_STAINED",
+    "MAGENTA_STAINED",
+    "PINK_STAINED",
+]
+
+[family.SHULKER]
+order = ["SHELL", "BOX"]
+
+[family.SHULKER.shape.BOX]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.BED]
+order = ["BASE"]
+
+[family.BED.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.CANDLE]
+order = ["BASE"]
+
+[family.CANDLE.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.BANNER]
+order = ["BASE"]
+
+[family.BANNER.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.GRASS]
+order = ["BLOCK", "BASE"]
+
+[family.GRASS.shape.BASE]
+order = ["SHORT", "SHORT_DRY", "TALL", "TALL_DRY"]
+
+[family.PODZOL]
+order = ["BASE"]
+
+[family.MYCELIUM]
+order = ["BASE"]
+
+[family.DIRT]
+order = ["BASE", "PATH"]
+
+[family.DIRT.shape.BASE]
+order = ["BASE", "COARSE", "ROOTED"]
+
+[family.FARMLAND]
+order = ["BASE"]
+
+[family.SNOW]
+order = ["BASE", "BLOCK"]
+
+[family.MOSS]
+order = ["BLOCK", "CARPET"]
+
+[family.PALE_MOSS]
+order = ["BLOCK", "CARPET"]
+
+[family.PALE_HANGING_MOSS]
+order = ["BASE"]
+
+[family.CALCITE]
+order = ["BASE"]
+
+[family.DRIPSTONE]
+order = ["BLOCK", "BASE"]
+
+[family.DRIPSTONE.shape.BASE]
+order = ["BASE", "POINTED"]
+
+[family.SOUL]
+order = ["SAND", "SOIL"]
+
+[family.ICE]
+order = ["BASE"]
+
+[family.ICE.shape.BASE]
+order = ["BASE", "PACKED", "BLUE"]
+
+[family.DANDELION]
+order = ["BASE"]
+
+[family.DANDELION.shape.BASE]
+order = ["BASE", "GOLDEN"]
+
+[family.POPPY]
+order = ["BASE"]
+
+[family.BLUE_ORCHID]
+order = ["BASE"]
+
+[family.ALLIUM]
+order = ["BASE"]
+
+[family.AZURE_BLUET]
+order = ["BASE"]
+
+[family.RED_TULIP]
+order = ["BASE"]
+
+[family.ORANGE_TULIP]
+order = ["BASE"]
+
+[family.WHITE_TULIP]
+order = ["BASE"]
+
+[family.PINK_TULIP]
+order = ["BASE"]
+
+[family.OXEYE_DAISY]
+order = ["BASE"]
+
+[family.CORNFLOWER]
+order = ["BASE"]
+
+[family.LILY_OF_THE_VALLEY]
+order = ["BASE"]
+
+[family.TORCHFLOWER]
+order = ["BASE", "SEEDS"]
+
+[family.CACTUS]
+order = ["BASE", "FLOWER"]
+
+[family.EYEBLOSSOM]
+order = ["BASE"]
+
+[family.EYEBLOSSOM.shape.BASE]
+order = ["BASE", "CLOSED", "OPEN"]
+
+[family.WITHER_ROSE]
+order = ["BASE"]
+
+[family.PINK_PETALS]
+order = ["BASE"]
+
+[family.WILDFLOWERS]
+order = ["BASE"]
+
+[family.LEAF_LITTER]
+order = ["BASE"]
+
+[family.SPORE_BLOSSOM]
+order = ["BASE"]
+
+[family.FIREFLY_BUSH]
+order = ["BASE"]
+
+[family.SUGAR_CANE]
+order = ["BASE"]
+
+[family.CRIMSON_ROOTS]
+order = ["BASE"]
+
+[family.WARPED_ROOTS]
+order = ["BASE"]
+
+[family.NETHER_SPROUTS]
+order = ["BASE"]
+
+[family.VINES]
+order = ["BASE"]
+
+[family.VINES.shape.BASE]
+order = ["BASE", "WEEPING", "TWISTING"]
+
+[family.VINE]
+order = ["BASE"]
+
+[family.BUSH]
+order = ["BASE"]
+
+[family.BUSH.shape.BASE]
+order = ["BASE", "DEAD"]
+
+[family.FERN]
+order = ["BASE"]
+
+[family.FERN.shape.BASE]
+order = ["BASE", "LARGE"]
+
+[family.SUNFLOWER]
+order = ["BASE"]
+
+[family.LILAC]
+order = ["BASE"]
+
+[family.ROSE_BUSH]
+order = ["BASE"]
+
+[family.PEONY]
+order = ["BASE"]
+
+[family.PITCHER]
+order = ["PLANT", "POD"]
+
+[family.CHORUS]
+order = ["PLANT", "FLOWER", "FRUIT"]
+
+[family.CHORUS.shape.FRUIT]
+order = ["BASE", "POPPED"]
+
+[family.GLOW_LICHEN]
+order = ["BASE"]
+
+[family.HANGING_ROOTS]
+order = ["BASE"]
+
+[family.FROGSPAWN]
+order = ["BASE"]
+
+[family.DRIED_GHAST]
+order = ["BASE"]
+
+[family.COCOA_BEANS]
+order = ["BASE"]
+
+[family.NETHER_WART]
+order = ["BASE", "BLOCK"]
+
+[family.LILY_PAD]
+order = ["BASE"]
+
+[family.SEAGRASS]
+order = ["BASE"]
+
+[family.SEA_PICKLE]
+order = ["BASE"]
+
+[family.CORAL]
+order = ["BLOCK", "BASE", "FAN"]
+
+[family.CORAL.shape.BLOCK]
+order = [
+    "BASE",
+    "BRAIN",
+    "BUBBLE",
+    "FIRE",
+    "HORN",
+    "TUBE",
+    "DEAD",
+    "DEAD_BRAIN",
+    "DEAD_BUBBLE",
+    "DEAD_FIRE",
+    "DEAD_HORN",
+    "DEAD_TUBE",
+]
+
+[family.CORAL.shape.BASE]
+order = [
+    "BASE",
+    "BRAIN",
+    "BUBBLE",
+    "FIRE",
+    "HORN",
+    "TUBE",
+    "DEAD",
+    "DEAD_BRAIN",
+    "DEAD_BUBBLE",
+    "DEAD_FIRE",
+    "DEAD_HORN",
+    "DEAD_TUBE",
+]
+
+[family.CORAL.shape.FAN]
+order = [
+    "BASE",
+    "BRAIN",
+    "BUBBLE",
+    "FIRE",
+    "HORN",
+    "TUBE",
+    "DEAD",
+    "DEAD_BRAIN",
+    "DEAD_BUBBLE",
+    "DEAD_FIRE",
+    "DEAD_HORN",
+    "DEAD_TUBE",
+]
+
+[family.DRIPLEAF]
+order = ["BASE"]
+
+[family.DRIPLEAF.shape.BASE]
+order = ["BASE", "SMALL", "BIG"]
+
+[family.AMETHYST]
+order = ["BLOCK", "BASE", "BUD", "CLUSTER", "SHARD"]
+
+[family.AMETHYST.shape.BASE]
+order = ["BASE", "BUDDING"]
+
+[family.AMETHYST.shape.BUD]
+order = ["BASE", "SMALL", "MEDIUM", "LARGE"]
+
+[family.SPONGE]
+order = ["BASE"]
+
+[family.SPONGE.shape.BASE]
+order = ["BASE", "WET"]
+
+[family.PUMPKIN]
+order = ["BASE", "PIE", "SEEDS"]
+
+[family.PUMPKIN.shape.BASE]
+order = ["BASE", "CARVED"]
+
+[family.JACK_O_LANTERN]
+order = ["BASE"]
+
+[family.HAY]
+order = ["BLOCK"]
+
+[family.WHEAT]
+order = ["BASE", "SEEDS"]
+
+[family.BEE_NEST]
+order = ["BASE"]
+
+[family.BEEHIVE]
+order = ["BASE"]
+
+[family.HONEYCOMB]
+order = ["BASE", "BLOCK"]
+
+[family.SLIME]
+order = ["BALL", "BLOCK"]
+
+[family.HONEY]
+order = ["BLOCK"]
+
+[family.RESIN]
+order = ["BLOCK", "CLUMP", "BRICK"]
+
+[family.NETHER]
+order = ["BRICK"]
+
+[family.SCULK]
+order = ["BASE", "VEIN", "CATALYST", "SHRIEKER", "SENSOR"]
+
+[family.SCULK.shape.SENSOR]
+order = ["BASE", "CALIBRATED"]
+
+[family.COBWEB]
+order = ["BASE"]
+
+[family.BEDROCK]
+order = ["BASE"]
+
+[family.TORCH]
+order = ["BASE"]
+
+[family.TORCH.shape.BASE]
+order = ["BASE", "SOUL", "COPPER", "REDSTONE"]
+
+[family.LANTERN]
+order = ["BASE"]
+
+[family.LANTERN.shape.BASE]
+order = [
+    "BASE",
+    "SOUL",
+    "COPPER",
+    "EXPOSED_COPPER",
+    "WEATHERED_COPPER",
+    "OXIDIZED_COPPER",
+    "WAXED_COPPER",
+    "WAXED_EXPOSED_COPPER",
+    "WAXED_WEATHERED_COPPER",
+    "WAXED_OXIDIZED_COPPER",
+]
+
+[family.CHAIN]
+order = ["BASE"]
+
+[family.CHAIN.shape.BASE]
+order = [
+    "BASE",
+    "IRON",
+    "COPPER",
+    "EXPOSED_COPPER",
+    "WEATHERED_COPPER",
+    "OXIDIZED_COPPER",
+    "WAXED_COPPER",
+    "WAXED_EXPOSED_COPPER",
+    "WAXED_WEATHERED_COPPER",
+    "WAXED_OXIDIZED_COPPER",
+]
+
+[family.END_ROD]
+order = ["BASE"]
+
+[family.COPPER]
+order = [
+    "BASE",
+    "BLOCK",
+    "GRATE",
+    "STAIRS",
+    "SLAB",
+    "BARS",
+    "DOOR",
+    "TRAPDOOR",
+    "BULB",
+    "GOLEM_STATUE",
+    "NUGGET",
+    "INGOT",
+    "ORE",
+]
+
+[family.COPPER.shape.BASE]
+order = [
+    "BASE",
+    "RAW",
+    "EXPOSED",
+    "WEATHERED",
+    "OXIDIZED",
+    "WAXED",
+    "CHISELED",
+    "CUT",
+    "EXPOSED_CHISELED",
+    "EXPOSED_CUT",
+    "OXIDIZED_CHISELED",
+    "OXIDIZED_CUT",
+    "WAXED_CHISELED",
+    "WAXED_CUT",
+    "WAXED_EXPOSED_CHISELED",
+    "WAXED_EXPOSED",
+    "WAXED_EXPOSED_CUT",
+    "WAXED_OXIDIZED_CHISELED",
+    "WAXED_OXIDIZED",
+    "WAXED_OXIDIZED_CUT",
+    "WAXED_WEATHERED_CHISELED",
+    "WAXED_WEATHERED",
+    "WAXED_WEATHERED_CUT",
+    "WEATHERED_CHISELED",
+    "WEATHERED_CUT",
+]
+
+[family.COPPER.shape.BLOCK]
+order = ["BASE", "RAW", "WAXED"]
+
+[family.COPPER.shape.GRATE]
+order = [
+    "BASE",
+    "EXPOSED",
+    "WEATHERED",
+    "OXIDIZED",
+    "WAXED",
+    "WAXED_EXPOSED",
+    "WAXED_OXIDIZED",
+    "WAXED_WEATHERED",
+]
+
+[family.COPPER.shape.STAIRS]
+order = [
+    "BASE",
+    "CUT",
+    "EXPOSED",
+    "WEATHERED",
+    "OXIDIZED",
+    "WAXED",
+    "EXPOSED_CUT",
+    "WEATHERED_CUT",
+    "OXIDIZED_CUT",
+    "WAXED_CUT",
+    "WAXED_EXPOSED_CUT",
+    "WAXED_WEATHERED_CUT",
+    "WAXED_OXIDIZED_CUT",
+]
+
+[family.COPPER.shape.SLAB]
+order = [
+    "BASE",
+    "CUT",
+    "EXPOSED",
+    "WEATHERED",
+    "OXIDIZED",
+    "WAXED",
+    "EXPOSED_CUT",
+    "WEATHERED_CUT",
+    "OXIDIZED_CUT",
+    "WAXED_CUT",
+    "WAXED_EXPOSED_CUT",
+    "WAXED_WEATHERED_CUT",
+    "WAXED_OXIDIZED_CUT",
+]
+
+[family.COPPER.shape.BARS]
+order = [
+    "BASE",
+    "EXPOSED",
+    "WEATHERED",
+    "OXIDIZED",
+    "WAXED",
+    "WAXED_EXPOSED",
+    "WAXED_OXIDIZED",
+    "WAXED_WEATHERED",
+]
+
+[family.COPPER.shape.DOOR]
+order = [
+    "BASE",
+    "EXPOSED",
+    "WEATHERED",
+    "OXIDIZED",
+    "WAXED",
+    "WAXED_EXPOSED",
+    "WAXED_OXIDIZED",
+    "WAXED_WEATHERED",
+]
+
+[family.COPPER.shape.TRAPDOOR]
+order = [
+    "BASE",
+    "EXPOSED",
+    "WEATHERED",
+    "OXIDIZED",
+    "WAXED",
+    "WAXED_EXPOSED",
+    "WAXED_OXIDIZED",
+    "WAXED_WEATHERED",
+]
+
+[family.COPPER.shape.BULB]
+order = [
+    "BASE",
+    "EXPOSED",
+    "WEATHERED",
+    "OXIDIZED",
+    "WAXED",
+    "WAXED_EXPOSED",
+    "WAXED_OXIDIZED",
+    "WAXED_WEATHERED",
+]
+
+[family.COPPER.shape.GOLEM_STATUE]
+order = [
+    "BASE",
+    "EXPOSED",
+    "WEATHERED",
+    "OXIDIZED",
+    "WAXED",
+    "WAXED_EXPOSED",
+    "WAXED_OXIDIZED",
+    "WAXED_WEATHERED",
+]
+
+[family.COPPER.shape.ORE]
+order = ["BASE", "DEEPSLATE"]
+
+[family.GLOWSTONE]
+order = ["BASE", "DUST"]
+
+[family.SHROOMLIGHT]
+order = ["BASE"]
+
+[family.FROGLIGHT]
+order = ["BASE"]
+
+[family.FROGLIGHT.shape.BASE]
+order = ["BASE", "OCHRE", "VERDANT", "PEARLESCENT"]
+
+[family.OBSIDIAN]
+order = ["BASE"]
+
+[family.OBSIDIAN.shape.BASE]
+order = ["BASE", "CRYING"]
+
+[family.MAGMA]
+order = ["BLOCK", "CREAM"]
+
+[family.CRAFTING_TABLE]
+order = ["BASE"]
+
+[family.STONECUTTER]
+order = ["BASE"]
+
+[family.CARTOGRAPHY_TABLE]
+order = ["BASE"]
+
+[family.FLETCHING_TABLE]
+order = ["BASE"]
+
+[family.SMITHING_TABLE]
+order = ["BASE"]
+
+[family.GRINDSTONE]
+order = ["BASE"]
+
+[family.LOOM]
+order = ["BASE"]
+
+[family.FURNACE]
+order = ["BASE"]
+
+[family.SMOKER]
+order = ["BASE"]
+
+[family.BLAST_FURNACE]
+order = ["BASE"]
+
+[family.CAMPFIRE]
+order = ["BASE"]
+
+[family.CAMPFIRE.shape.BASE]
+order = ["BASE", "SOUL"]
+
+[family.ANVIL]
+order = ["BASE"]
+
+[family.ANVIL.shape.BASE]
+order = ["BASE", "CHIPPED", "DAMAGED"]
+
+[family.COMPOSTER]
+order = ["BASE"]
+
+[family.NOTE_BLOCK]
+order = ["BASE"]
+
+[family.JUKEBOX]
+order = ["BASE"]
+
+[family.ENCHANTING_TABLE]
+order = ["BASE"]
+
+[family.END_CRYSTAL]
+order = ["BASE"]
+
+[family.BREWING_STAND]
+order = ["BASE"]
+
+[family.CAULDRON]
+order = ["BASE"]
+
+[family.BELL]
+order = ["BASE"]
+
+[family.BEACON]
+order = ["BASE"]
+
+[family.CONDUIT]
+order = ["BASE"]
+
+[family.LODESTONE]
+order = ["BASE"]
+
+[family.LADDER]
+order = ["BASE"]
+
+[family.SCAFFOLDING]
+order = ["BASE"]
+
+[family.SAND]
+order = ["BASE"]
+
+[family.SAND.shape.BASE]
+order = ["BASE", "SUSPICIOUS"]
+
+[family.RED_SAND]
+order = ["BASE"]
+
+[family.GRAVEL]
+order = ["BASE"]
+
+[family.GRAVEL.shape.BASE]
+order = ["BASE", "SUSPICIOUS"]
+
+[family.LIGHTNING_ROD]
+order = ["BASE"]
+
+[family.LIGHTNING_ROD.shape.BASE]
+order = [
+    "BASE",
+    "EXPOSED",
+    "WEATHERED",
+    "OXIDIZED",
+    "WAXED",
+    "WAXED_EXPOSED",
+    "WAXED_OXIDIZED",
+    "WAXED_WEATHERED",
+]
+
+[family.POT]
+order = ["BASE"]
+
+[family.POT.shape.BASE]
+order = ["BASE", "FLOWER", "DECORATED"]
+
+[family.ARMOR_STAND]
+order = ["BASE"]
+
+[family.ITEM_FRAME]
+order = ["BASE"]
+
+[family.ITEM_FRAME.shape.BASE]
+order = ["BASE", "GLOW"]
+
+[family.PAINTING]
+order = ["BASE"]
+
+[family.BOOKSHELF]
+order = ["BASE"]
+
+[family.BOOKSHELF.shape.BASE]
+order = ["BASE", "CHISELED"]
+
+[family.LECTERN]
+order = ["BASE"]
+
+[family.CHEST]
+order = ["BASE"]
+
+[family.CHEST.shape.BASE]
+order = [
+    "BASE",
+    "TRAPPED",
+    "COPPER",
+    "EXPOSED_COPPER",
+    "WEATHERED_COPPER",
+    "OXIDIZED_COPPER",
+    "WAXED_COPPER",
+    "WAXED_EXPOSED_COPPER",
+    "WAXED_OXIDIZED_COPPER",
+    "WAXED_WEATHERED_COPPER",
+    "ENDER",
+]
+
+[family.BARREL]
+order = ["BASE"]
+
+[family.RESPAWN_ANCHOR]
+order = ["BASE"]
+
+[family.SKELETON_SKULL]
+order = ["BASE"]
+
+[family.SKELETON_SKULL.shape.BASE]
+order = ["BASE", "WITHER"]
+
+[family.HEAD]
+order = ["BASE"]
+
+[family.HEAD.shape.BASE]
+order = ["BASE", "PLAYER", "ZOMBIE", "CREEPER", "PIGLIN", "DRAGON"]
+
+[family.END_PORTAL_FRAME]
+order = ["BASE"]
+
+[family.VAULT]
+order = ["BASE"]
+
+[family.REDSTONE]
+order = ["BASE", "BLOCK", "ORE", "LAMP"]
+
+[family.REDSTONE.shape.ORE]
+order = ["BASE", "DEEPSLATE"]
+
+[family.REPEATER]
+order = ["BASE"]
+
+[family.COMPARATOR]
+order = ["BASE"]
+
+[family.TARGET]
+order = ["BASE"]
+
+[family.LEVER]
+order = ["BASE"]
+
+[family.TRIPWIRE_HOOK]
+order = ["BASE"]
+
+[family.DAYLIGHT_DETECTOR]
+order = ["BASE"]
+
+[family.PISTON]
+order = ["BASE"]
+
+[family.PISTON.shape.BASE]
+order = ["BASE", "STICKY"]
+
+[family.DISPENSER]
+order = ["BASE"]
+
+[family.DROPPER]
+order = ["BASE"]
+
+[family.CRAFTER]
+order = ["BASE"]
+
+[family.HOPPER]
+order = ["BASE"]
+
+[family.OBSERVER]
+order = ["BASE"]
+
+[family.RAIL]
+order = ["BASE"]
+
+[family.RAIL.shape.BASE]
+order = ["BASE", "ACTIVATOR", "DETECTOR", "POWERED"]
+
+[family.SHOVEL]
+order = ["BASE"]
+
+[family.SHOVEL.shape.BASE]
+order = [
+    "BASE",
+    "WOODEN",
+    "STONE",
+    "COPPER",
+    "IRON",
+    "GOLDEN",
+    "DIAMOND",
+    "NETHERITE",
+]
+
+[family.PICKAXE]
+order = ["BASE"]
+
+[family.PICKAXE.shape.BASE]
+order = [
+    "BASE",
+    "WOODEN",
+    "STONE",
+    "COPPER",
+    "IRON",
+    "GOLDEN",
+    "DIAMOND",
+    "NETHERITE",
+]
+
+[family.HOE]
+order = ["BASE"]
+
+[family.HOE.shape.BASE]
+order = [
+    "BASE",
+    "WOODEN",
+    "STONE",
+    "COPPER",
+    "IRON",
+    "GOLDEN",
+    "DIAMOND",
+    "NETHERITE",
+]
+
+[family.BUCKET]
+order = ["BASE"]
+
+[family.BUCKET.shape.BASE]
+order = [
+    "BASE",
+    "WATER",
+    "COD",
+    "SALMON",
+    "TROPICAL_FISH",
+    "PUFFERFISH",
+    "AXOLOTL",
+    "TADPOLE",
+    "SULFUR_CUBE",
+    "LAVA",
+    "POWDER_SNOW",
+    "MILK",
+]
+
+[family.FISHING_ROD]
+order = ["BASE"]
+
+[family.FLINT_AND_STEEL]
+order = ["BASE"]
+
+[family.SHEARS]
+order = ["BASE"]
+
+[family.BRUSH]
+order = ["BASE"]
+
+[family.NAME_TAG]
+order = ["BASE"]
+
+[family.LEAD]
+order = ["BASE"]
+
+[family.BUNDLE]
+order = ["BASE"]
+
+[family.BUNDLE.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.COMPASS]
+order = ["BASE"]
+
+[family.COMPASS.shape.BASE]
+order = ["BASE", "RECOVERY"]
+
+[family.CLOCK]
+order = ["BASE"]
+
+[family.SPYGLASS]
+order = ["BASE"]
+
+[family.MAP]
+order = ["BASE"]
+
+[family.WIND_CHARGE]
+order = ["BASE"]
+
+[family.ENDER]
+order = ["PEARL", "EYE"]
+
+[family.ELYTRA]
+order = ["BASE"]
+
+[family.FIREWORK_ROCKET]
+order = ["BASE"]
+
+[family.SADDLE]
+order = ["BASE"]
+
+[family.HARNESS]
+order = ["BASE"]
+
+[family.HARNESS.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.ON_A_STICK]
+order = ["BASE"]
+
+[family.ON_A_STICK.shape.BASE]
+order = ["BASE", "CARROT", "WARPED_FUNGUS"]
+
+[family.MINECART]
+order = ["BASE"]
+
+[family.MINECART.shape.BASE]
+order = ["BASE", "HOPPER", "CHEST", "FURNACE", "TNT"]
+
+[family.GOAT_HORN]
+order = ["BASE"]
+
+[family.MUSIC_DISC]
+order = [
+    "THIRTEEN",
+    "CAT",
+    "BLOCKS",
+    "CHIRP",
+    "FAR",
+    "MALL",
+    "MELLOHI",
+    "STAL",
+    "STRAD",
+    "WARD",
+    "ELEVEN",
+    "CREATOR_MUSIC_BOX",
+    "WAIT",
+    "CREATOR",
+    "PRECIPICE",
+    "OTHERSIDE",
+    "RELIC",
+    "FIVE",
+    "PIGSTEP",
+    "TEARS",
+    "LAVA_CHICKEN",
+    "BOUNCE",
+]
+
+[family.SWORD]
+order = ["BASE"]
+
+[family.SWORD.shape.BASE]
+order = [
+    "BASE",
+    "WOODEN",
+    "STONE",
+    "COPPER",
+    "IRON",
+    "GOLDEN",
+    "DIAMOND",
+    "NETHERITE",
+]
+
+[family.SPEAR]
+order = ["BASE"]
+
+[family.SPEAR.shape.BASE]
+order = [
+    "BASE",
+    "WOODEN",
+    "STONE",
+    "COPPER",
+    "IRON",
+    "GOLDEN",
+    "DIAMOND",
+    "NETHERITE",
+]
+
+[family.AXE]
+order = ["BASE"]
+
+[family.AXE.shape.BASE]
+order = [
+    "BASE",
+    "WOODEN",
+    "STONE",
+    "COPPER",
+    "IRON",
+    "GOLDEN",
+    "DIAMOND",
+    "NETHERITE",
+]
+
+[family.TRIDENT]
+order = ["BASE"]
+
+[family.MACE]
+order = ["BASE"]
+
+[family.SHIELD]
+order = ["BASE"]
+
+[family.HELMET]
+order = ["BASE"]
+
+[family.HELMET.shape.BASE]
+order = [
+    "BASE",
+    "LEATHER",
+    "COPPER",
+    "CHAINMAIL",
+    "IRON",
+    "GOLDEN",
+    "DIAMOND",
+    "NETHERITE",
+    "TURTLE",
+]
+
+[family.CHESTPLATE]
+order = ["BASE"]
+
+[family.CHESTPLATE.shape.BASE]
+order = [
+    "BASE",
+    "LEATHER",
+    "COPPER",
+    "CHAINMAIL",
+    "IRON",
+    "GOLDEN",
+    "DIAMOND",
+    "NETHERITE",
+]
+
+[family.LEGGINGS]
+order = ["BASE"]
+
+[family.LEGGINGS.shape.BASE]
+order = [
+    "BASE",
+    "LEATHER",
+    "COPPER",
+    "CHAINMAIL",
+    "IRON",
+    "GOLDEN",
+    "DIAMOND",
+    "NETHERITE",
+]
+
+[family.BOOTS]
+order = ["BASE"]
+
+[family.BOOTS.shape.BASE]
+order = [
+    "BASE",
+    "LEATHER",
+    "COPPER",
+    "CHAINMAIL",
+    "IRON",
+    "GOLDEN",
+    "DIAMOND",
+    "NETHERITE",
+]
+
+[family.ARROW]
+order = ["BASE"]
+
+[family.ARROW.shape.BASE]
+order = ["BASE", "SPECTRAL", "TIPPED"]
+
+[family.HORSE_ARMOR]
+order = ["BASE"]
+
+[family.HORSE_ARMOR.shape.BASE]
+order = ["BASE", "LEATHER", "COPPER", "IRON", "GOLDEN", "DIAMOND", "NETHERITE"]
+
+[family.WOLF_ARMOR]
+order = ["BASE"]
+
+[family.NAUTILUS_ARMOR]
+order = ["BASE"]
+
+[family.NAUTILUS_ARMOR.shape.BASE]
+order = ["BASE", "COPPER", "IRON", "GOLDEN", "DIAMOND", "NETHERITE"]
+
+[family.TOTEM_OF_UNDYING]
+order = ["BASE"]
+
+[family.TNT]
+order = ["BASE"]
+
+[family.SNOWBALL]
+order = ["BASE"]
+
+[family.EGG]
+order = ["BASE"]
+
+[family.EGG.shape.BASE]
+order = ["BASE", "BROWN", "BLUE", "TURTLE", "SNIFFER", "DRAGON"]
+
+[family.BOW]
+order = ["BASE"]
+
+[family.CROSSBOW]
+order = ["BASE"]
+
+[family.APPLE]
+order = ["BASE"]
+
+[family.APPLE.shape.BASE]
+order = ["BASE", "GOLDEN", "ENCHANTED_GOLDEN"]
+
+[family.MELON]
+order = ["BASE", "SEEDS", "SLICE"]
+
+[family.MELON.shape.SLICE]
+order = ["BASE", "GLISTERING"]
+
+[family.SWEET_BERRIES]
+order = ["BASE"]
+
+[family.GLOW_BERRIES]
+order = ["BASE"]
+
+[family.CARROT]
+order = ["BASE"]
+
+[family.CARROT.shape.BASE]
+order = ["BASE", "GOLDEN"]
+
+[family.POTATO]
+order = ["BASE"]
+
+[family.POTATO.shape.BASE]
+order = ["BASE", "BAKED", "POISONOUS"]
+
+[family.BEETROOT]
+order = ["BASE", "SEEDS"]
+
+[family.KELP]
+order = ["BASE", "BLOCK"]
+
+[family.KELP.shape.BASE]
+order = ["BASE", "DRIED"]
+
+[family.KELP.shape.BLOCK]
+order = ["BASE", "DRIED"]
+
+[family.BEEF]
+order = ["BASE"]
+
+[family.BEEF.shape.BASE]
+order = ["BASE", "COOKED"]
+
+[family.PORKCHOP]
+order = ["BASE"]
+
+[family.PORKCHOP.shape.BASE]
+order = ["BASE", "COOKED"]
+
+[family.MUTTON]
+order = ["BASE"]
+
+[family.MUTTON.shape.BASE]
+order = ["BASE", "COOKED"]
+
+[family.CHICKEN]
+order = ["BASE"]
+
+[family.CHICKEN.shape.BASE]
+order = ["BASE", "COOKED"]
+
+[family.RABBIT]
+order = ["BASE"]
+
+[family.RABBIT.shape.BASE]
+order = ["BASE", "COOKED"]
+
+[family.COD]
+order = ["BASE"]
+
+[family.COD.shape.BASE]
+order = ["BASE", "COOKED"]
+
+[family.SALMON]
+order = ["BASE"]
+
+[family.SALMON.shape.BASE]
+order = ["BASE", "COOKED"]
+
+[family.TROPICAL_FISH]
+order = ["BASE"]
+
+[family.PUFFERFISH]
+order = ["BASE"]
+
+[family.BREAD]
+order = ["BASE"]
+
+[family.COOKIE]
+order = ["BASE"]
+
+[family.CAKE]
+order = ["BASE"]
+
+[family.ROTTEN_FLESH]
+order = ["BASE"]
+
+[family.SPIDER_EYE]
+order = ["BASE"]
+
+[family.SPIDER_EYE.shape.BASE]
+order = ["BASE", "FERMENTED"]
+
+[family.STEW]
+order = ["BASE"]
+
+[family.STEW.shape.BASE]
+order = ["BASE", "MUSHROOM", "RABBIT", "SUSPICIOUS"]
+
+[family.MUSHROOM]
+order = ["BASE", "BLOCK", "STEM"]
+
+[family.MUSHROOM.shape.BASE]
+order = ["BASE", "RED", "BROWN"]
+
+[family.MUSHROOM.shape.BLOCK]
+order = ["BASE", "RED", "BROWN"]
+
+[family.SOUP]
+order = ["BASE"]
+
+[family.SOUP.shape.BASE]
+order = ["BASE", "BEETROOT"]
+
+[family.BOTTLE]
+order = ["BASE"]
+
+[family.BOTTLE.shape.BASE]
+order = ["BASE", "HONEY", "OMINOUS", "GLASS", "EXPERIENCE"]
+
+[family.POTION]
+order = ["BASE"]
+
+[family.POTION.shape.BASE]
+order = ["BASE", "SPLASH", "LINGERING"]
+
+[family.COAL]
+order = ["BASE", "BLOCK", "ORE"]
+
+[family.COAL.shape.ORE]
+order = ["BASE", "DEEPSLATE"]
+
+[family.CHARCOAL]
+order = ["BASE"]
+
+[family.IRON]
+order = ["BASE", "BLOCK", "BARS", "DOOR", "TRAPDOOR", "NUGGET", "INGOT", "ORE"]
+
+[family.IRON.shape.BASE]
+order = ["BASE", "RAW"]
+
+[family.IRON.shape.BLOCK]
+order = ["BASE", "RAW"]
+
+[family.IRON.shape.ORE]
+order = ["BASE", "DEEPSLATE"]
+
+[family.HEAVY_WEIGHTED_PRESSURE_PLATE]
+order = ["BASE"]
+
+[family.GOLD]
+order = ["BASE", "BLOCK", "NUGGET", "INGOT", "ORE"]
+
+[family.GOLD.shape.BASE]
+order = ["BASE", "RAW"]
+
+[family.GOLD.shape.BLOCK]
+order = ["BASE", "RAW"]
+
+[family.GOLD.shape.ORE]
+order = ["BASE", "DEEPSLATE", "NETHER"]
+
+[family.LIGHT_WEIGHTED_PRESSURE_PLATE]
+order = ["BASE"]
+
+[family.EMERALD]
+order = ["BASE", "BLOCK", "ORE"]
+
+[family.EMERALD.shape.ORE]
+order = ["BASE", "DEEPSLATE"]
+
+[family.LAPIS]
+order = ["LAZULI", "BLOCK", "ORE"]
+
+[family.LAPIS.shape.ORE]
+order = ["BASE", "DEEPSLATE"]
+
+[family.DIAMOND]
+order = ["BASE", "BLOCK", "ORE"]
+
+[family.DIAMOND.shape.ORE]
+order = ["BASE", "DEEPSLATE"]
+
+[family.ANCIENT_DEBRIS]
+order = ["BASE"]
+
+[family.NETHERITE]
+order = ["SCRAP", "INGOT", "BLOCK"]
+
+[family.STICK]
+order = ["BASE"]
+
+[family.FLINT]
+order = ["BASE"]
+
+[family.BONE]
+order = ["BASE", "MEAL", "BLOCK"]
+
+[family.STRING]
+order = ["BASE"]
+
+[family.FEATHER]
+order = ["BASE"]
+
+[family.LEATHER]
+order = ["BASE"]
+
+[family.RABBIT_HIDE]
+order = ["BASE"]
+
+[family.INK_SAC]
+order = ["BASE"]
+
+[family.INK_SAC.shape.BASE]
+order = ["BASE", "GLOW"]
+
+[family.CLAY]
+order = ["BASE", "BALL"]
+
+[family.NAUTILUS_SHELL]
+order = ["BASE"]
+
+[family.HEART_OF_THE_SEA]
+order = ["BASE"]
+
+[family.FIRE_CHARGE]
+order = ["BASE"]
+
+[family.ROD]
+order = ["BASE"]
+
+[family.ROD.shape.BASE]
+order = ["BASE", "BLAZE", "BREEZE"]
+
+[family.HEAVY_CORE]
+order = ["BASE"]
+
+[family.NETHER_STAR]
+order = ["BASE"]
+
+[family.ECHO_SHARD]
+order = ["BASE"]
+
+[family.DISC_FRAGMENT]
+order = ["FIVE"]
+
+[family.BOWL]
+order = ["BASE"]
+
+[family.BRICK]
+order = ["BASE"]
+
+[family.PAPER]
+order = ["BASE"]
+
+[family.BOOK]
+order = ["BASE"]
+
+[family.BOOK.shape.BASE]
+order = ["BASE", "WRITABLE", "ENCHANTED"]
+
+[family.FIREWORK_STAR]
+order = ["BASE"]
+
+[family.GUNPOWDER]
+order = ["BASE"]
+
+[family.DRAGON_BREATH]
+order = ["BASE"]
+
+[family.BLAZE_POWDER]
+order = ["BASE"]
+
+[family.SUGAR]
+order = ["BASE"]
+
+[family.RABBIT_FOOT]
+order = ["BASE"]
+
+[family.GHAST_TEAR]
+order = ["BASE"]
+
+[family.PHANTOM_MEMBRANE]
+order = ["BASE"]
+
+[family.BANNER_PATTERN]
+order = ["BASE"]
+
+[family.BANNER_PATTERN.shape.BASE]
+order = [
+    "BASE",
+    "BORDURE_INDENTED",
+    "CREEPER",
+    "FIELD_MASONED",
+    "FLOW",
+    "FLOWER",
+    "GLOBE",
+    "GUSTER",
+    "MOJANG",
+    "PIGLIN",
+    "SKULL",
+]
+
+[family.TRIAL_KEY]
+order = ["BASE"]
+
+[family.TRIAL_KEY.shape.BASE]
+order = ["BASE", "OMINOUS"]
+
+[family.QUARTZ]
+order = ["BASE", "BLOCK", "BRICKS", "STAIRS", "SLAB", "PILLAR", "ORE"]
+
+[family.QUARTZ.shape.BASE]
+order = ["BASE", "SMOOTH"]
+
+[family.QUARTZ.shape.BLOCK]
+order = ["BASE", "CHISELED"]
+
+[family.QUARTZ.shape.STAIRS]
+order = ["BASE", "SMOOTH"]
+
+[family.QUARTZ.shape.SLAB]
+order = ["BASE", "SMOOTH"]
+
+[family.QUARTZ.shape.ORE]
+order = ["BASE", "NETHER"]
+
+[family.SMITHING_TEMPLATE]
+order = ["BASE"]
+
+[family.SMITHING_TEMPLATE.shape.BASE]
+order = [
+    "BASE",
+    "NETHERITE_UPGRADE",
+    "BOLT_ARMOR_TRIM",
+    "COAST_ARMOR_TRIM",
+    "DUNE_ARMOR_TRIM",
+    "EYE_ARMOR_TRIM",
+    "FLOW_ARMOR_TRIM",
+    "HOST_ARMOR_TRIM",
+    "RAISER_ARMOR_TRIM",
+    "RIB_ARMOR_TRIM",
+    "SENTRY_ARMOR_TRIM",
+    "SHAPER_ARMOR_TRIM",
+    "SILENCE_ARMOR_TRIM",
+    "SNOUT_ARMOR_TRIM",
+    "SPIRE_ARMOR_TRIM",
+    "TIDE_ARMOR_TRIM",
+    "VEX_ARMOR_TRIM",
+    "WARD_ARMOR_TRIM",
+    "WAYFINDER_ARMOR_TRIM",
+    "WILD_ARMOR_TRIM",
+]
+
+[family.POTTERY_SHERD]
+order = ["BASE"]
+
+[family.POTTERY_SHERD.shape.BASE]
+order = [
+    "BASE",
+    "ANGLER",
+    "ARCHER",
+    "ARMS_UP",
+    "BLADE",
+    "BREWER",
+    "BURN",
+    "DANGER",
+    "EXPLORER",
+    "FLOW",
+    "FRIEND",
+    "GUSTER",
+    "HEART",
+    "HEARTBREAK",
+    "HOWL",
+    "MINER",
+    "MOURNER",
+    "PLENTY",
+    "PRIZE",
+    "SCRAPE",
+    "SHEAF",
+    "SHELTER",
+    "SKULL",
+    "SNORT",
+]
+
+[family.SCUTE]
+order = ["BASE"]
+
+[family.SCUTE.shape.BASE]
+order = ["BASE", "TURTLE", "ARMADILLO"]
+
+[family.DYE]
+order = ["BASE"]
+
+[family.DYE.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
+[family.SPAWNER]
+order = ["BASE"]
+
+[family.SPAWNER.shape.BASE]
+order = ["BASE", "TRIAL"]
+
+[family.CREAKING_HEART]
+order = ["BASE"]
+
+[family.SPAWN_EGG]
+order = ["BASE"]
+
+[family.SPAWN_EGG.shape.BASE]
+order = [
+    "BASE",
+    "CHICKEN",
+    "COW",
+    "PIG",
+    "SHEEP",
+    "CAMEL",
+    "DONKEY",
+    "HORSE",
+    "MULE",
+    "CAT",
+    "PARROT",
+    "WOLF",
+    "ARMADILLO",
+    "BAT",
+    "BEE",
+    "FOX",
+    "GOAT",
+    "LLAMA",
+    "OCELOT",
+    "PANDA",
+    "POLAR_BEAR",
+    "RABBIT",
+    "AXOLOTL",
+    "COD",
+    "DOLPHIN",
+    "FROG",
+    "GLOW_SQUID",
+    "NAUTILUS",
+    "PUFFERFISH",
+    "SALMON",
+    "SQUID",
+    "TADPOLE",
+    "TROPICAL_FISH",
+    "TURTLE",
+    "ALLAY",
+    "MOOSHROOM",
+    "SNIFFER",
+    "SULFUR_CUBE",
+    "COPPER_GOLEM",
+    "IRON_GOLEM",
+    "SNOW_GOLEM",
+    "TRADER_LLAMA",
+    "VILLAGER",
+    "WANDERING_TRADER",
+    "BOGGED",
+    "CAMEL_HUSK",
+    "DROWNED",
+    "HUSK",
+    "PARCHED",
+    "SKELETON",
+    "SKELETON_HORSE",
+    "STRAY",
+    "ZOMBIE",
+    "ZOMBIE_HORSE",
+    "ZOMBIE_NAUTILUS",
+    "ZOMBIE_VILLAGER",
+    "CAVE_SPIDER",
+    "SPIDER",
+    "BREEZE",
+    "CREAKING",
+    "CREEPER",
+    "ELDER_GUARDIAN",
+    "GUARDIAN",
+    "PHANTOM",
+    "SILVERFISH",
+    "SLIME",
+    "WARDEN",
+    "WITCH",
+    "EVOKER",
+    "PILLAGER",
+    "RAVAGER",
+    "VEX",
+    "VINDICATOR",
+    "BLAZE",
+    "GHAST",
+    "HAPPY_GHAST",
+    "HOGLIN",
+    "MAGMA_CUBE",
+    "PIGLIN",
+    "PIGLIN_BRUTE",
+    "STRIDER",
+    "WITHER_SKELETON",
+    "ZOGLIN",
+    "ZOMBIFIED_PIGLIN",
+    "ENDERMAN",
+    "ENDERMITE",
+    "SHULKER",
+]
