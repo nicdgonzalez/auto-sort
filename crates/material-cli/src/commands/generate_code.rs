@@ -1,10 +1,10 @@
 use std::path::PathBuf;
 use std::{env, fs};
 
-use material_core::MATERIALS;
+use material_core::{Category, MATERIALS};
 
 use crate::commands::Run;
-use crate::profile::Profile;
+use crate::profile::{Precedence, Profile};
 use crate::sort_key::get_sort_key;
 
 #[derive(clap::Args)]
@@ -60,12 +60,42 @@ public record SortKey(
         );
 
         for (entry, sort_key) in keys {
-            // TODO: Re-arrange values based on precedence value in each category.
+            let category = Category::from_repr(usize::from(sort_key.category)).unwrap();
+            let precedence = profile.precedence(category).unwrap_or(&[
+                Precedence::Family,
+                Precedence::Shape,
+                Precedence::Modifier,
+            ]);
+
+            let first = sort_key.category;
+
+            let second = match precedence.first().unwrap() {
+                Precedence::Family => sort_key.family,
+                Precedence::Shape => sort_key.shape,
+                Precedence::Modifier => sort_key.modifier,
+            };
+
+            let third = match precedence.get(1).unwrap() {
+                Precedence::Family => sort_key.family,
+                Precedence::Shape => sort_key.shape,
+                Precedence::Modifier => sort_key.modifier,
+            };
+
+            let fourth = match precedence.get(2).unwrap() {
+                Precedence::Family => sort_key.family,
+                Precedence::Shape => sort_key.shape,
+                Precedence::Modifier => sort_key.modifier,
+            };
+
             println!(
-                "        BY_NAME.put(\"{entry}\", new SortKey({}, {}, {}, {}));",
-                sort_key.category, sort_key.family, sort_key.shape, sort_key.modifier
+                "        BY_NAME.put(\"{entry}\", new SortKey({first}, {second}, {third}, {fourth}));"
             );
         }
+
+        println!(
+            "        BY_NAME.put(\"AIR\", new SortKey({}, 0, 0, 0));",
+            u8::MAX
+        );
 
         println!(
             "    }}
