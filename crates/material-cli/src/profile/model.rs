@@ -3,10 +3,10 @@ use std::str::FromStr;
 
 use material_core::{Category, Family, Shape};
 
-#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
+#[derive(Debug, Clone, PartialEq, Eq, serde::Serialize, serde::Deserialize, strum::FromRepr)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum Precedence {
-    Category,
+    // Category,
     Family,
     Shape,
     Modifier,

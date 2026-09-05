@@ -6,6 +6,7 @@ use std::path::Path;
 use heck::ToShoutySnakeCase as _;
 use material_core::{Category, Family, Modifier, Shape};
 
+pub use crate::profile::model::Precedence;
 use crate::profile::model::TomlProfile;
 
 mod model;
@@ -67,6 +68,14 @@ impl Profile {
         Some(u16::try_from(index).expect("usize overflowed u16"))
     }
 
+    #[must_use]
+    pub fn precedence(&self, category: Category) -> Option<&[Precedence]> {
+        self.inner
+            .category
+            .get(&category)
+            .map(|v| v.precedence.as_ref())
+    }
+
     /// Returns the user's preferred family ordering for a given [`Category`].
     #[must_use]
     pub fn family(&self, category: Category) -> Option<&[Family]> {
@@ -77,7 +86,7 @@ impl Profile {
     // TODO: This should be a Result.
     pub fn family_position(&self, category: Category, family: Family) -> Option<u16> {
         let ordering = self.family(category)?;
-        let index = ordering.iter().position(|f| f == &family)?;
+        let index = ordering.iter().position(|f| family == *f)?;
         Some(u16::try_from(index).expect("usize overflowed u16"))
     }
 
@@ -91,7 +100,7 @@ impl Profile {
     // TODO: This should be a Result.
     pub fn shape_position(&self, family: Family, shape: Shape) -> Option<u16> {
         let ordering = self.shape(family)?;
-        let index = ordering.iter().position(|s| s == &shape)?;
+        let index = ordering.iter().position(|s| shape == *s)?;
         Some(u16::try_from(index).expect("usize overflowed u16"))
     }
 
@@ -128,7 +137,7 @@ impl Profile {
                 .join("_")
         };
 
-        let index = ordering.iter().position(|m| m == &modifier_id)?;
+        let index = ordering.iter().position(|m| modifier_id == *m)?;
         Some(u16::try_from(index).expect("usize overflowed u16"))
     }
 }
