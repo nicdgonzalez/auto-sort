@@ -5,15 +5,7 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.UUID;
 
-import org.bukkit.event.inventory.InventoryType;
-
 public class SortItemTracker {
-    public record SortItemMetadata(
-            InventoryType inventoryType,
-            int slot,
-            SortItem sortItem) {
-    }
-
     private final Map<UUID, SortItemMetadata> trackedItems = new HashMap<>();
 
     public Optional<SortItemMetadata> get(UUID playerId) {
