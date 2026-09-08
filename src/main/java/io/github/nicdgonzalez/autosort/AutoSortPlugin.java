@@ -5,10 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import io.github.nicdgonzalez.autosort.listeners.InventoryClickListener;
 
-/**
- * This class is responsible for registering our event listeners.
- */
-public class AutoSort extends JavaPlugin {
+public class AutoSortPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);

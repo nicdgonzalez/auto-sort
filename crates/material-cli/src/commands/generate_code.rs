@@ -49,12 +49,25 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+/**
+ * This file was automatically generated. Do NOT edit it manually!
+ *
+ * @param category Creative mode menu categories (e.g., BUILDING_BLOCKS, NATURAL_BLOCKS,
+ *                 FUNCTIONAL_BLOCKS, etc.).
+ * @param family   Base name for a material name (e.g., OAK, COBBLESTONE, NETHER_BRICKS, etc.).
+ * @param shape    Family suffix (e.g., SLAB, STAIRS, PRESSURE_PLATE, etc.).
+ * @param modifier Family prefix (e.g., STRIPPED, CRACKED, POLISHED, etc.).
+ */
 public record SortKey(
         int category,
         int family,
         int shape,
         int modifier) {{
     private static Map<String, SortKey> BY_NAME = new HashMap<>();
+
+    public static Optional<SortKey> byName(String name) {{
+        return Optional.ofNullable(BY_NAME.get(name));
+    }}
 
     static {{"
         );
@@ -99,10 +112,6 @@ public record SortKey(
 
         println!(
             "    }}
-
-    public static Optional<SortKey> byName(String name) {{
-        return Optional.ofNullable(BY_NAME.get(name));
-    }}
 }}"
         );
 

@@ -1,6 +1,5 @@
 package io.github.nicdgonzalez.autosort.listeners;
 
-import java.util.Optional;
 import java.util.UUID;
 
 import org.bukkit.Material;
@@ -12,17 +11,15 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
+import io.github.nicdgonzalez.autosort.InventorySorter;
+import io.github.nicdgonzalez.autosort.SortExclusion;
 import io.github.nicdgonzalez.autosort.SortItem;
 import io.github.nicdgonzalez.autosort.SortItemTracker;
-import io.github.nicdgonzalez.autosort.SortItemTracker.SortItemMetadata;
-import net.kyori.adventure.text.serializer.plain.PlainTextComponentSerializer;
+import io.github.nicdgonzalez.autosort.SortItemMetadata;
 
 public class InventoryClickListener implements Listener {
     private final SortItemTracker sortItemTracker = new SortItemTracker();
 
-    /**
-     * Runs when the player clicks a slot in the inventory.
-     */
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
         if (!(event.getWhoClicked() instanceof Player player)) {
@@ -30,85 +27,81 @@ public class InventoryClickListener implements Listener {
         }
 
         UUID playerId = player.getUniqueId();
-        Optional<SortItemMetadata> sortItemMetadata = sortItemTracker.get(playerId);
+        SortItemMetadata sortItemMetadata = sortItemTracker.get(playerId).orElse(null);
 
-        if (sortItemMetadata.isPresent()) {
-            // Player is putting an item down.
-            SortItemMetadata metadata = sortItemMetadata.get();
-            assert metadata.sortItem().itemStack().isSimilar(event.getCursor());
+        if (sortItemMetadata != null) {
+            assert event.getCursor().isSimilar(sortItemMetadata.sortItem().itemStack())
+                    : "item stack under the cursor should be the same as in the tracker";
 
             Inventory clickedInventory = event.getClickedInventory();
 
             if (clickedInventory == null) {
-                player.sendMessage("Item was thrown?");
-
-                // If the player throws the item out and is close enough to pick it back up,
-                // without this call, the trigger would be in reverse (i.e., sort on pick up
-                // instead of put down).
+                // Without this call, if the player throws the item stack out and is close
+                // enough to pick it back up, the trigger would be in reverse (i.e., items would
+                // sort every time the trigger is picked up instead of put down).
                 sortItemTracker.remove(playerId);
-
                 return;
             }
 
-            boolean isSameSlot = clickedInventory.getType() == metadata.inventoryType()
-                    && event.getSlot() == metadata.slot();
+            boolean isSameSlot = sortItemMetadata.inventory().getType() == clickedInventory.getType()
+                    && event.getSlot() == sortItemMetadata.slot();
 
             if (isSameSlot) {
-                player.sendMessage("trigger sort request");
-                SortItem sortItem = metadata.sortItem();
+                SortExclusion exclusion = new SortExclusion(
+                        event.getClickedInventory(),
+                        sortItemMetadata.sortItem().itemStack(),
+                        sortItemMetadata.slot());
 
-                switch (sortItem.action()) {
-                    case TOP -> {
-                        // Sort top inventory
+                switch (sortItemMetadata.sortItem().action()) {
+                    case TOP_ONLY -> {
+                        InventorySorter.sort(event.getView().getTopInventory(), exclusion);
                     }
-                    case BOTTOM -> {
-                        // Sort bottom inventory
+                    case BOTTOM_ONLY -> {
+                        InventorySorter.sort(event.getView().getBottomInventory(), exclusion);
                     }
-                    case BOTH -> {
-                        // Sort top, then bottom inventory.
+                    case TOP_AND_BOTTOM -> {
+                        InventorySorter.sort(event.getView().getTopInventory(), exclusion);
+                        InventorySorter.sort(event.getView().getBottomInventory(), exclusion);
                     }
                     case NONE -> {
-                        // Do nothing.
                     }
                 }
             }
 
             sortItemTracker.remove(playerId);
         } else {
-            // To trigger a sort request, the player has to pick up
-            // the sort-triggering item and put it back down in the same slot.
-            // This is only possible if the user left-clicks the item.
+            // To trigger a sort request, the player has to pick up the sort-triggering item
+            // and put it back down in the same slot. This is only possible if the user
+            // left-clicks the item.
             if (!event.isLeftClick()) {
                 return;
             }
 
-            // If the player's cursor is not empty, assume they are swapping
-            // items around to organize their inventory (including if
-            // the sort-triggering item is picked up in the process).
+            // If the player's cursor is not empty, assume they are swapping items around to
+            // organize their inventory (including if the sort-triggering item is selected).
             if (event.getCursor().getType() != Material.AIR) {
                 return;
             }
 
             ItemStack itemPickedUp = event.getCurrentItem();
-            Optional<SortItem> sortItem = SortItem.fromItemStack(itemPickedUp);
+            SortItem sortItem = SortItem.fromItemStack(itemPickedUp).orElse(null);
 
-            if (sortItem.isEmpty()) {
+            if (sortItem == null) {
                 return;
             }
 
             Inventory clickedInventory = event.getClickedInventory();
-            assert clickedInventory != null : "expected sort-triggering item to be inside of the inventory";
+            assert clickedInventory != null : "SortItem was clicked from outside inventory view";
 
-            sortItemTracker.put(
-                    playerId,
-                    new SortItemMetadata(clickedInventory.getType(), event.getSlot(), sortItem.get()));
+            SortItemMetadata metadata = new SortItemMetadata(
+                    clickedInventory,
+                    sortItem,
+                    event.getSlot());
+
+            sortItemTracker.put(playerId, metadata);
         }
     }
 
-    /**
-     * Removes the player's entry from {@link SortItemTracker} when the inventory
-     * is closed to avoid keeping stale data.
-     */
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent event) {
         sortItemTracker.remove(event.getPlayer().getUniqueId());
