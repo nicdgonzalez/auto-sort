@@ -95,6 +95,7 @@ order = [
     "GLASS_PANE",
     "SHULKER",
     "BED",
+    "CUSHION",
     "CANDLE",
     "BANNER",
     "DYE",
@@ -720,6 +721,37 @@ order = ["BASE", "STRIPPED"]
 
 [family.PALE_OAK.shape.WOOD]
 order = ["BASE", "STRIPPED"]
+
+[family.POPLAR]
+order = [
+    "LOG",
+    "WOOD",
+    "PLANKS",
+    "STAIRS",
+    "SLAB",
+    "FENCE",
+    "FENCE_GATE",
+    "DOOR",
+    "TRAPDOOR",
+    "PRESSURE_PLATE",
+    "BUTTON",
+    "LEAVES",
+    "SAPLING",
+    "SHELF",
+    "SIGN",
+    "HANGING_SIGN",
+    "BOAT",
+    "CHEST_BOAT",
+]
+
+[family.POPLAR.shape.LOG]
+order = ["BASE", "STRIPPED"]
+
+[family.POPLAR.shape.WOOD]
+order = ["BASE", "STRIPPED"]
+
+[family.POPLAR.shape.LEAVES]
+order = ["BASE", "RED", "ORANGE", "YELLOW"]
 
 [family.AZALEA]
 order = ["BASE", "LEAVES"]
@@ -1391,11 +1423,41 @@ order = [
     "PINK",
 ]
 
+[family.CUSHION]
+order = ["BASE"]
+
+[family.CUSHION.shape.BASE]
+order = [
+    "BASE",
+    "WHITE",
+    "LIGHT_GRAY",
+    "GRAY",
+    "BLACK",
+    "BROWN",
+    "RED",
+    "ORANGE",
+    "YELLOW",
+    "LIME",
+    "GREEN",
+    "CYAN",
+    "LIGHT_BLUE",
+    "BLUE",
+    "PURPLE",
+    "MAGENTA",
+    "PINK",
+]
+
 [family.GRASS]
 order = ["BLOCK", "BASE"]
 
 [family.GRASS.shape.BASE]
 order = ["SHORT", "SHORT_DRY", "TALL", "TALL_DRY"]
+
+[family.SHRUB]
+order = ["BASE"]
+
+[family.SHRUB.shape.BASE]
+order = ["RED"]
 
 [family.PODZOL]
 order = ["BASE"]

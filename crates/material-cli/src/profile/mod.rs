@@ -26,10 +26,12 @@ pub enum ProfileError {
 
 #[derive(Debug, thiserror::Error)]
 pub enum GetModifierError {
-    #[error("family not found")]
-    FamilyNotFound,
-    // #[error("shape not found")]
-    // ShapeNotFound,
+    #[error("family not found: {family} ({shape})")]
+    FamilyNotFound { family: Family, shape: Shape },
+
+    #[expect(dead_code)]
+    #[error("shape not found")]
+    ShapeNotFound,
 }
 
 impl Profile {
@@ -110,7 +112,7 @@ impl Profile {
             .inner
             .family
             .get(&family)
-            .ok_or(GetModifierError::FamilyNotFound)?;
+            .ok_or_else(|| GetModifierError::FamilyNotFound { family, shape })?;
         let modifiers = family.shape.get(&shape).cloned().unwrap_or_default().order;
         Ok(modifiers)
     }

@@ -263,6 +263,35 @@ pub enum Family {
     PaleOak,
 
     #[material(items = [
+        (C::BuildingBlocks, S::Log, []),
+        (C::BuildingBlocks, S::Log, [M::Stripped]),
+        (C::BuildingBlocks, S::Wood, []),
+        (C::BuildingBlocks, S::Wood, [M::Stripped]),
+        (C::BuildingBlocks, S::Planks, []),
+        (C::BuildingBlocks, S::Stairs, []),
+        (C::BuildingBlocks, S::Slab, []),
+        (C::BuildingBlocks, S::Fence, []),
+        (C::BuildingBlocks, S::FenceGate, []),
+        (C::BuildingBlocks, S::Door, []),
+        (C::BuildingBlocks, S::Trapdoor, []),
+        (C::BuildingBlocks, S::PressurePlate, []),
+        (C::BuildingBlocks, S::Button, []),
+
+        (C::NaturalBlocks, S::Leaves, [M::Red]),
+        (C::NaturalBlocks, S::Leaves, [M::Orange]),
+        (C::NaturalBlocks, S::Leaves, [M::Yellow]),
+        (C::NaturalBlocks, S::Sapling, []),
+
+        (C::FunctionalBlocks, S::Shelf, []),
+        (C::FunctionalBlocks, S::Sign, []),
+        (C::FunctionalBlocks, S::HangingSign, []),
+
+        (C::ToolsAndUtilities, S::Boat, []),
+        (C::ToolsAndUtilities, S::ChestBoat, []),
+    ])]
+    Poplar,
+
+    #[material(items = [
         (C::NaturalBlocks, S::Base, []),
         (C::NaturalBlocks, S::Base, [M::Flowering]),
         (C::NaturalBlocks, S::Leaves, []),
@@ -738,6 +767,38 @@ pub enum Family {
         (C::ColoredBlocks, S::Base, [M::Purple]),
         (C::ColoredBlocks, S::Base, [M::Magenta]),
         (C::ColoredBlocks, S::Base, [M::Pink]),
+        (C::ColoredBlocks, S::Slab, [M::White]),
+        (C::ColoredBlocks, S::Slab, [M::LightGray]),
+        (C::ColoredBlocks, S::Slab, [M::Gray]),
+        (C::ColoredBlocks, S::Slab, [M::Black]),
+        (C::ColoredBlocks, S::Slab, [M::Brown]),
+        (C::ColoredBlocks, S::Slab, [M::Red]),
+        (C::ColoredBlocks, S::Slab, [M::Orange]),
+        (C::ColoredBlocks, S::Slab, [M::Yellow]),
+        (C::ColoredBlocks, S::Slab, [M::Lime]),
+        (C::ColoredBlocks, S::Slab, [M::Green]),
+        (C::ColoredBlocks, S::Slab, [M::Cyan]),
+        (C::ColoredBlocks, S::Slab, [M::LightBlue]),
+        (C::ColoredBlocks, S::Slab, [M::Blue]),
+        (C::ColoredBlocks, S::Slab, [M::Purple]),
+        (C::ColoredBlocks, S::Slab, [M::Magenta]),
+        (C::ColoredBlocks, S::Slab, [M::Pink]),
+        (C::ColoredBlocks, S::Stairs, [M::White]),
+        (C::ColoredBlocks, S::Stairs, [M::LightGray]),
+        (C::ColoredBlocks, S::Stairs, [M::Gray]),
+        (C::ColoredBlocks, S::Stairs, [M::Black]),
+        (C::ColoredBlocks, S::Stairs, [M::Brown]),
+        (C::ColoredBlocks, S::Stairs, [M::Red]),
+        (C::ColoredBlocks, S::Stairs, [M::Orange]),
+        (C::ColoredBlocks, S::Stairs, [M::Yellow]),
+        (C::ColoredBlocks, S::Stairs, [M::Lime]),
+        (C::ColoredBlocks, S::Stairs, [M::Green]),
+        (C::ColoredBlocks, S::Stairs, [M::Cyan]),
+        (C::ColoredBlocks, S::Stairs, [M::LightBlue]),
+        (C::ColoredBlocks, S::Stairs, [M::Blue]),
+        (C::ColoredBlocks, S::Stairs, [M::Purple]),
+        (C::ColoredBlocks, S::Stairs, [M::Magenta]),
+        (C::ColoredBlocks, S::Stairs, [M::Pink]),
     ])]
     Wool,
 
@@ -799,6 +860,38 @@ pub enum Family {
         (C::ColoredBlocks, S::Base, [M::Purple]),
         (C::ColoredBlocks, S::Base, [M::Magenta]),
         (C::ColoredBlocks, S::Base, [M::Pink]),
+        (C::ColoredBlocks, S::Slab, [M::White]),
+        (C::ColoredBlocks, S::Slab, [M::LightGray]),
+        (C::ColoredBlocks, S::Slab, [M::Gray]),
+        (C::ColoredBlocks, S::Slab, [M::Black]),
+        (C::ColoredBlocks, S::Slab, [M::Brown]),
+        (C::ColoredBlocks, S::Slab, [M::Red]),
+        (C::ColoredBlocks, S::Slab, [M::Orange]),
+        (C::ColoredBlocks, S::Slab, [M::Yellow]),
+        (C::ColoredBlocks, S::Slab, [M::Lime]),
+        (C::ColoredBlocks, S::Slab, [M::Green]),
+        (C::ColoredBlocks, S::Slab, [M::Cyan]),
+        (C::ColoredBlocks, S::Slab, [M::LightBlue]),
+        (C::ColoredBlocks, S::Slab, [M::Blue]),
+        (C::ColoredBlocks, S::Slab, [M::Purple]),
+        (C::ColoredBlocks, S::Slab, [M::Magenta]),
+        (C::ColoredBlocks, S::Slab, [M::Pink]),
+        (C::ColoredBlocks, S::Stairs, [M::White]),
+        (C::ColoredBlocks, S::Stairs, [M::LightGray]),
+        (C::ColoredBlocks, S::Stairs, [M::Gray]),
+        (C::ColoredBlocks, S::Stairs, [M::Black]),
+        (C::ColoredBlocks, S::Stairs, [M::Brown]),
+        (C::ColoredBlocks, S::Stairs, [M::Red]),
+        (C::ColoredBlocks, S::Stairs, [M::Orange]),
+        (C::ColoredBlocks, S::Stairs, [M::Yellow]),
+        (C::ColoredBlocks, S::Stairs, [M::Lime]),
+        (C::ColoredBlocks, S::Stairs, [M::Green]),
+        (C::ColoredBlocks, S::Stairs, [M::Cyan]),
+        (C::ColoredBlocks, S::Stairs, [M::LightBlue]),
+        (C::ColoredBlocks, S::Stairs, [M::Blue]),
+        (C::ColoredBlocks, S::Stairs, [M::Purple]),
+        (C::ColoredBlocks, S::Stairs, [M::Magenta]),
+        (C::ColoredBlocks, S::Stairs, [M::Pink]),
     ])]
     Concrete,
 
@@ -924,6 +1017,7 @@ pub enum Family {
         (C::ColoredBlocks, S::Base, [M::Purple]),
         (C::ColoredBlocks, S::Base, [M::Magenta]),
         (C::ColoredBlocks, S::Base, [M::Pink]),
+        (C::ColoredBlocks, S::Base, [M::Straw]),
     ])]
     Bed,
 
@@ -968,6 +1062,26 @@ pub enum Family {
     ])]
     Banner,
 
+    #[material(items = [
+        (C::ColoredBlocks, S::Base, [M::White]),
+        (C::ColoredBlocks, S::Base, [M::LightGray]),
+        (C::ColoredBlocks, S::Base, [M::Gray]),
+        (C::ColoredBlocks, S::Base, [M::Black]),
+        (C::ColoredBlocks, S::Base, [M::Brown]),
+        (C::ColoredBlocks, S::Base, [M::Red]),
+        (C::ColoredBlocks, S::Base, [M::Orange]),
+        (C::ColoredBlocks, S::Base, [M::Yellow]),
+        (C::ColoredBlocks, S::Base, [M::Lime]),
+        (C::ColoredBlocks, S::Base, [M::Green]),
+        (C::ColoredBlocks, S::Base, [M::Cyan]),
+        (C::ColoredBlocks, S::Base, [M::LightBlue]),
+        (C::ColoredBlocks, S::Base, [M::Blue]),
+        (C::ColoredBlocks, S::Base, [M::Purple]),
+        (C::ColoredBlocks, S::Base, [M::Magenta]),
+        (C::ColoredBlocks, S::Base, [M::Pink]),
+    ])]
+    Cushion,
+
     // => Natural Blocks
     #[material(items = [
         (C::NaturalBlocks, S::Block, []),
@@ -977,6 +1091,11 @@ pub enum Family {
         (C::NaturalBlocks, S::Base, [M::Tall, M::Dry]),
     ])]
     Grass,
+
+    #[material(items = [
+        (C::NaturalBlocks, S::Base, [M::Red]),
+    ])]
+    Shrub,
 
     #[material(items = [
         (C::NaturalBlocks, S::Base, []),
@@ -2045,6 +2164,22 @@ pub enum Family {
 
     #[material(items = [
         (C::ToolsAndUtilities, S::Base, []),
+        (C::ToolsAndUtilities, S::Base, [M::AbandonedCamp]),
+        (C::ToolsAndUtilities, S::Base, [M::BuriedAncientCity]),
+        (C::ToolsAndUtilities, S::Base, [M::BuriedMineshaft]),
+        (C::ToolsAndUtilities, S::Base, [M::BuriedTreasure]),
+        (C::ToolsAndUtilities, S::Base, [M::BuriedTrialChambers]),
+        (C::ToolsAndUtilities, S::Base, [M::DesertPyramid]),
+        (C::ToolsAndUtilities, S::Base, [M::DesertVillage]),
+        (C::ToolsAndUtilities, S::Base, [M::JunglePyramid]),
+        (C::ToolsAndUtilities, S::Base, [M::OceanMonument]),
+        (C::ToolsAndUtilities, S::Base, [M::PlainsVillage]),
+        (C::ToolsAndUtilities, S::Base, [M::SavannaVillage]),
+        (C::ToolsAndUtilities, S::Base, [M::SnowyVillage]),
+        (C::ToolsAndUtilities, S::Base, [M::SwampHut]),
+        (C::ToolsAndUtilities, S::Base, [M::TaigaVillage]),
+        (C::ToolsAndUtilities, S::Base, [M::WarmOceanRuins]),
+        (C::ToolsAndUtilities, S::Base, [M::WoodlandMansion]),
     ])]
     Map,
 
@@ -2444,6 +2579,8 @@ pub enum Family {
         (C::NaturalBlocks, S::Base, [M::Brown]),
         (C::NaturalBlocks, S::Block, [M::Brown]),
         (C::NaturalBlocks, S::Stem, []),
+
+        (C::NaturalBlocks, S::Base, [M::Shelf]),
     ])]
     Mushroom,
 

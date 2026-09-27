@@ -16,7 +16,7 @@ clean:
 		bs4==0.0.2
 
 data/materials.txt: .venv
-	mkdir "$(@D)"
+	mkdir --parents "$(@D)"
 	./scripts/materials.py > "$@"
 
 target/release/auto-sort:

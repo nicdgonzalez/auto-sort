@@ -229,6 +229,12 @@ pub enum Modifier {
     Beetroot,
     Suspicious,
 
+    // Bed
+    Straw,
+
+    // Mushroom
+    Shelf,
+
     // Bottle
     Glass,
     Honey,
@@ -267,6 +273,24 @@ pub enum Modifier {
     Mojang,
     // Piglin,
     // Skull,
+
+    // Maps
+    AbandonedCamp,
+    BuriedAncientCity,
+    BuriedMineshaft,
+    BuriedTreasure,
+    BuriedTrialChambers,
+    DesertPyramid,
+    DesertVillage,
+    JunglePyramid,
+    OceanMonument,
+    PlainsVillage,
+    SavannaVillage,
+    SnowyVillage,
+    SwampHut,
+    TaigaVillage,
+    WarmOceanRuins,
+    WoodlandMansion,
 
     // Smithing Templates
     NetheriteUpgrade,
