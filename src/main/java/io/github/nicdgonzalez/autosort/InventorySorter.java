@@ -12,6 +12,15 @@ import org.bukkit.inventory.ItemStack;
 
 public class InventorySorter {
     public static void sort(Inventory inventory, SortExclusion exclusion) {
+        // This is the inventory _before_ the excluded item was placed back into
+        // the inventory.
+        //
+        // The player has picked up the sort-triggering item and put it back down
+        // in the same slot in the inventory, which started the sorting operation.
+        //
+        // Whichever inventory the item was placed in should be missing one item, so
+        // make sure to add it back in or the player will lose their sorting item.
+
         ItemStack[] storageContents = inventory.getStorageContents();
         int startIndex = getStartIndex(inventory.getType());
 
@@ -41,14 +50,12 @@ public class InventorySorter {
 
             if (inHotbar) {
                 // The player's hotbar is left untouched and the excluded item is currently
-                // being held by the player's cursor. It's safe to assume the target slot
-                // is currently empty.
+                // being held by the player's cursor.
                 assert storageContents[exclusion.slot()] == null;
                 storageContents[exclusion.slot()] = exclusion.itemStack();
             } else {
                 // The excluded item was somewhere within the target inventory, and is currently
-                // being held by the player's cursor. It's safe to assume we have at least one
-                // slot left to append it to the end of the sorted items.
+                // being held by the player's cursor.
                 assert i < storageContents.length;
                 assert storageContents[i] == null;
                 storageContents[i] = exclusion.itemStack();
@@ -60,8 +67,7 @@ public class InventorySorter {
             ItemStack[] otherStorageContents = otherInventory.getStorageContents();
 
             // The other storage's contents were left untouched and the excluded item is
-            // still being held by the player's cursor. It's safe to assume the target slot
-            // is currently empty.
+            // currently being held by the player's cursor.
             assert otherStorageContents[exclusion.slot()] == null;
             otherStorageContents[exclusion.slot()] = exclusion.itemStack();
 

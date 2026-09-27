@@ -4,8 +4,25 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
-public record SortKey(int category, int family, int shape, int modifier) {
+/**
+ * This file was automatically generated. Do NOT edit it manually!
+ *
+ * @param category Creative mode menu categories (e.g., BUILDING_BLOCKS, NATURAL_BLOCKS,
+ *                 FUNCTIONAL_BLOCKS, etc.).
+ * @param family   Base name for a material name (e.g., OAK, COBBLESTONE, NETHER_BRICKS, etc.).
+ * @param shape    Family suffix (e.g., SLAB, STAIRS, PRESSURE_PLATE, etc.).
+ * @param modifier Family prefix (e.g., STRIPPED, CRACKED, POLISHED, etc.).
+ */
+public record SortKey(
+        int category,
+        int family,
+        int shape,
+        int modifier) {
     private static Map<String, SortKey> BY_NAME = new HashMap<>();
+
+    public static Optional<SortKey> byName(String name) {
+        return Optional.ofNullable(BY_NAME.get(name));
+    }
 
     static {
         BY_NAME.put("OAK_LOG", new SortKey(0, 0, 0, 0));
@@ -382,6 +399,19 @@ public record SortKey(int category, int family, int shape, int modifier) {
         BY_NAME.put("QUARTZ_SLAB", new SortKey(0, 50, 4, 0));
         BY_NAME.put("SMOOTH_QUARTZ_SLAB", new SortKey(0, 50, 4, 1));
         BY_NAME.put("QUARTZ_PILLAR", new SortKey(0, 50, 5, 0));
+        BY_NAME.put("POPLAR_LOG", new SortKey(0, 65535, 0, 0));
+        BY_NAME.put("STRIPPED_POPLAR_LOG", new SortKey(0, 65535, 0, 1));
+        BY_NAME.put("POPLAR_WOOD", new SortKey(0, 65535, 1, 0));
+        BY_NAME.put("STRIPPED_POPLAR_WOOD", new SortKey(0, 65535, 1, 1));
+        BY_NAME.put("POPLAR_PLANKS", new SortKey(0, 65535, 2, 0));
+        BY_NAME.put("POPLAR_STAIRS", new SortKey(0, 65535, 3, 0));
+        BY_NAME.put("POPLAR_SLAB", new SortKey(0, 65535, 4, 0));
+        BY_NAME.put("POPLAR_FENCE", new SortKey(0, 65535, 5, 0));
+        BY_NAME.put("POPLAR_FENCE_GATE", new SortKey(0, 65535, 6, 0));
+        BY_NAME.put("POPLAR_DOOR", new SortKey(0, 65535, 7, 0));
+        BY_NAME.put("POPLAR_TRAPDOOR", new SortKey(0, 65535, 8, 0));
+        BY_NAME.put("POPLAR_PRESSURE_PLATE", new SortKey(0, 65535, 9, 0));
+        BY_NAME.put("POPLAR_BUTTON", new SortKey(0, 65535, 10, 0));
         BY_NAME.put("WHITE_WOOL", new SortKey(1, 0, 1, 0));
         BY_NAME.put("LIGHT_GRAY_WOOL", new SortKey(1, 0, 2, 0));
         BY_NAME.put("GRAY_WOOL", new SortKey(1, 0, 3, 0));
@@ -398,6 +428,38 @@ public record SortKey(int category, int family, int shape, int modifier) {
         BY_NAME.put("PURPLE_WOOL", new SortKey(1, 0, 14, 0));
         BY_NAME.put("MAGENTA_WOOL", new SortKey(1, 0, 15, 0));
         BY_NAME.put("PINK_WOOL", new SortKey(1, 0, 16, 0));
+        BY_NAME.put("BLACK_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("BLACK_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("BLUE_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("BLUE_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("BROWN_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("BROWN_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("CYAN_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("CYAN_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("GRAY_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("GRAY_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("GREEN_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("GREEN_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("LIGHT_BLUE_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("LIGHT_BLUE_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("LIGHT_GRAY_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("LIGHT_GRAY_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("LIME_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("LIME_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("MAGENTA_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("MAGENTA_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("ORANGE_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("ORANGE_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("PINK_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("PINK_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("PURPLE_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("PURPLE_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("RED_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("RED_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("WHITE_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("WHITE_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("YELLOW_WOOL_SLAB", new SortKey(1, 0, 65535, 65535));
+        BY_NAME.put("YELLOW_WOOL_STAIRS", new SortKey(1, 0, 65535, 65535));
         BY_NAME.put("WHITE_CARPET", new SortKey(1, 1, 1, 0));
         BY_NAME.put("LIGHT_GRAY_CARPET", new SortKey(1, 1, 2, 0));
         BY_NAME.put("GRAY_CARPET", new SortKey(1, 1, 3, 0));
@@ -447,6 +509,38 @@ public record SortKey(int category, int family, int shape, int modifier) {
         BY_NAME.put("PURPLE_CONCRETE", new SortKey(1, 3, 14, 0));
         BY_NAME.put("MAGENTA_CONCRETE", new SortKey(1, 3, 15, 0));
         BY_NAME.put("PINK_CONCRETE", new SortKey(1, 3, 16, 0));
+        BY_NAME.put("BLACK_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("BLACK_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("BLUE_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("BLUE_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("BROWN_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("BROWN_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("CYAN_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("CYAN_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("GRAY_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("GRAY_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("GREEN_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("GREEN_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("LIGHT_BLUE_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("LIGHT_BLUE_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("LIGHT_GRAY_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("LIGHT_GRAY_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("LIME_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("LIME_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("MAGENTA_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("MAGENTA_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("ORANGE_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("ORANGE_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("PINK_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("PINK_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("PURPLE_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("PURPLE_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("RED_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("RED_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("WHITE_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("WHITE_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("YELLOW_CONCRETE_SLAB", new SortKey(1, 3, 65535, 65535));
+        BY_NAME.put("YELLOW_CONCRETE_STAIRS", new SortKey(1, 3, 65535, 65535));
         BY_NAME.put("WHITE_CONCRETE_POWDER", new SortKey(1, 4, 1, 0));
         BY_NAME.put("LIGHT_GRAY_CONCRETE_POWDER", new SortKey(1, 4, 2, 0));
         BY_NAME.put("GRAY_CONCRETE_POWDER", new SortKey(1, 4, 3, 0));
@@ -547,55 +641,72 @@ public record SortKey(int category, int family, int shape, int modifier) {
         BY_NAME.put("PURPLE_BED", new SortKey(1, 9, 14, 0));
         BY_NAME.put("MAGENTA_BED", new SortKey(1, 9, 15, 0));
         BY_NAME.put("PINK_BED", new SortKey(1, 9, 16, 0));
-        BY_NAME.put("CANDLE", new SortKey(1, 10, 0, 0));
-        BY_NAME.put("WHITE_CANDLE", new SortKey(1, 10, 1, 0));
-        BY_NAME.put("LIGHT_GRAY_CANDLE", new SortKey(1, 10, 2, 0));
-        BY_NAME.put("GRAY_CANDLE", new SortKey(1, 10, 3, 0));
-        BY_NAME.put("BLACK_CANDLE", new SortKey(1, 10, 4, 0));
-        BY_NAME.put("BROWN_CANDLE", new SortKey(1, 10, 5, 0));
-        BY_NAME.put("RED_CANDLE", new SortKey(1, 10, 6, 0));
-        BY_NAME.put("ORANGE_CANDLE", new SortKey(1, 10, 7, 0));
-        BY_NAME.put("YELLOW_CANDLE", new SortKey(1, 10, 8, 0));
-        BY_NAME.put("LIME_CANDLE", new SortKey(1, 10, 9, 0));
-        BY_NAME.put("GREEN_CANDLE", new SortKey(1, 10, 10, 0));
-        BY_NAME.put("CYAN_CANDLE", new SortKey(1, 10, 11, 0));
-        BY_NAME.put("LIGHT_BLUE_CANDLE", new SortKey(1, 10, 12, 0));
-        BY_NAME.put("BLUE_CANDLE", new SortKey(1, 10, 13, 0));
-        BY_NAME.put("PURPLE_CANDLE", new SortKey(1, 10, 14, 0));
-        BY_NAME.put("MAGENTA_CANDLE", new SortKey(1, 10, 15, 0));
-        BY_NAME.put("PINK_CANDLE", new SortKey(1, 10, 16, 0));
-        BY_NAME.put("WHITE_BANNER", new SortKey(1, 11, 1, 0));
-        BY_NAME.put("LIGHT_GRAY_BANNER", new SortKey(1, 11, 2, 0));
-        BY_NAME.put("GRAY_BANNER", new SortKey(1, 11, 3, 0));
-        BY_NAME.put("BLACK_BANNER", new SortKey(1, 11, 4, 0));
-        BY_NAME.put("BROWN_BANNER", new SortKey(1, 11, 5, 0));
-        BY_NAME.put("RED_BANNER", new SortKey(1, 11, 6, 0));
-        BY_NAME.put("ORANGE_BANNER", new SortKey(1, 11, 7, 0));
-        BY_NAME.put("YELLOW_BANNER", new SortKey(1, 11, 8, 0));
-        BY_NAME.put("LIME_BANNER", new SortKey(1, 11, 9, 0));
-        BY_NAME.put("GREEN_BANNER", new SortKey(1, 11, 10, 0));
-        BY_NAME.put("CYAN_BANNER", new SortKey(1, 11, 11, 0));
-        BY_NAME.put("LIGHT_BLUE_BANNER", new SortKey(1, 11, 12, 0));
-        BY_NAME.put("BLUE_BANNER", new SortKey(1, 11, 13, 0));
-        BY_NAME.put("PURPLE_BANNER", new SortKey(1, 11, 14, 0));
-        BY_NAME.put("MAGENTA_BANNER", new SortKey(1, 11, 15, 0));
-        BY_NAME.put("PINK_BANNER", new SortKey(1, 11, 16, 0));
-        BY_NAME.put("WHITE_DYE", new SortKey(1, 12, 1, 0));
-        BY_NAME.put("LIGHT_GRAY_DYE", new SortKey(1, 12, 2, 0));
-        BY_NAME.put("GRAY_DYE", new SortKey(1, 12, 3, 0));
-        BY_NAME.put("BLACK_DYE", new SortKey(1, 12, 4, 0));
-        BY_NAME.put("BROWN_DYE", new SortKey(1, 12, 5, 0));
-        BY_NAME.put("RED_DYE", new SortKey(1, 12, 6, 0));
-        BY_NAME.put("ORANGE_DYE", new SortKey(1, 12, 7, 0));
-        BY_NAME.put("YELLOW_DYE", new SortKey(1, 12, 8, 0));
-        BY_NAME.put("LIME_DYE", new SortKey(1, 12, 9, 0));
-        BY_NAME.put("GREEN_DYE", new SortKey(1, 12, 10, 0));
-        BY_NAME.put("CYAN_DYE", new SortKey(1, 12, 11, 0));
-        BY_NAME.put("LIGHT_BLUE_DYE", new SortKey(1, 12, 12, 0));
-        BY_NAME.put("BLUE_DYE", new SortKey(1, 12, 13, 0));
-        BY_NAME.put("PURPLE_DYE", new SortKey(1, 12, 14, 0));
-        BY_NAME.put("MAGENTA_DYE", new SortKey(1, 12, 15, 0));
-        BY_NAME.put("PINK_DYE", new SortKey(1, 12, 16, 0));
+        BY_NAME.put("STRAW_BED", new SortKey(1, 9, 65535, 0));
+        BY_NAME.put("WHITE_CUSHION", new SortKey(1, 10, 1, 0));
+        BY_NAME.put("LIGHT_GRAY_CUSHION", new SortKey(1, 10, 2, 0));
+        BY_NAME.put("GRAY_CUSHION", new SortKey(1, 10, 3, 0));
+        BY_NAME.put("BLACK_CUSHION", new SortKey(1, 10, 4, 0));
+        BY_NAME.put("BROWN_CUSHION", new SortKey(1, 10, 5, 0));
+        BY_NAME.put("RED_CUSHION", new SortKey(1, 10, 6, 0));
+        BY_NAME.put("ORANGE_CUSHION", new SortKey(1, 10, 7, 0));
+        BY_NAME.put("YELLOW_CUSHION", new SortKey(1, 10, 8, 0));
+        BY_NAME.put("LIME_CUSHION", new SortKey(1, 10, 9, 0));
+        BY_NAME.put("GREEN_CUSHION", new SortKey(1, 10, 10, 0));
+        BY_NAME.put("CYAN_CUSHION", new SortKey(1, 10, 11, 0));
+        BY_NAME.put("LIGHT_BLUE_CUSHION", new SortKey(1, 10, 12, 0));
+        BY_NAME.put("BLUE_CUSHION", new SortKey(1, 10, 13, 0));
+        BY_NAME.put("PURPLE_CUSHION", new SortKey(1, 10, 14, 0));
+        BY_NAME.put("MAGENTA_CUSHION", new SortKey(1, 10, 15, 0));
+        BY_NAME.put("PINK_CUSHION", new SortKey(1, 10, 16, 0));
+        BY_NAME.put("CANDLE", new SortKey(1, 11, 0, 0));
+        BY_NAME.put("WHITE_CANDLE", new SortKey(1, 11, 1, 0));
+        BY_NAME.put("LIGHT_GRAY_CANDLE", new SortKey(1, 11, 2, 0));
+        BY_NAME.put("GRAY_CANDLE", new SortKey(1, 11, 3, 0));
+        BY_NAME.put("BLACK_CANDLE", new SortKey(1, 11, 4, 0));
+        BY_NAME.put("BROWN_CANDLE", new SortKey(1, 11, 5, 0));
+        BY_NAME.put("RED_CANDLE", new SortKey(1, 11, 6, 0));
+        BY_NAME.put("ORANGE_CANDLE", new SortKey(1, 11, 7, 0));
+        BY_NAME.put("YELLOW_CANDLE", new SortKey(1, 11, 8, 0));
+        BY_NAME.put("LIME_CANDLE", new SortKey(1, 11, 9, 0));
+        BY_NAME.put("GREEN_CANDLE", new SortKey(1, 11, 10, 0));
+        BY_NAME.put("CYAN_CANDLE", new SortKey(1, 11, 11, 0));
+        BY_NAME.put("LIGHT_BLUE_CANDLE", new SortKey(1, 11, 12, 0));
+        BY_NAME.put("BLUE_CANDLE", new SortKey(1, 11, 13, 0));
+        BY_NAME.put("PURPLE_CANDLE", new SortKey(1, 11, 14, 0));
+        BY_NAME.put("MAGENTA_CANDLE", new SortKey(1, 11, 15, 0));
+        BY_NAME.put("PINK_CANDLE", new SortKey(1, 11, 16, 0));
+        BY_NAME.put("WHITE_BANNER", new SortKey(1, 12, 1, 0));
+        BY_NAME.put("LIGHT_GRAY_BANNER", new SortKey(1, 12, 2, 0));
+        BY_NAME.put("GRAY_BANNER", new SortKey(1, 12, 3, 0));
+        BY_NAME.put("BLACK_BANNER", new SortKey(1, 12, 4, 0));
+        BY_NAME.put("BROWN_BANNER", new SortKey(1, 12, 5, 0));
+        BY_NAME.put("RED_BANNER", new SortKey(1, 12, 6, 0));
+        BY_NAME.put("ORANGE_BANNER", new SortKey(1, 12, 7, 0));
+        BY_NAME.put("YELLOW_BANNER", new SortKey(1, 12, 8, 0));
+        BY_NAME.put("LIME_BANNER", new SortKey(1, 12, 9, 0));
+        BY_NAME.put("GREEN_BANNER", new SortKey(1, 12, 10, 0));
+        BY_NAME.put("CYAN_BANNER", new SortKey(1, 12, 11, 0));
+        BY_NAME.put("LIGHT_BLUE_BANNER", new SortKey(1, 12, 12, 0));
+        BY_NAME.put("BLUE_BANNER", new SortKey(1, 12, 13, 0));
+        BY_NAME.put("PURPLE_BANNER", new SortKey(1, 12, 14, 0));
+        BY_NAME.put("MAGENTA_BANNER", new SortKey(1, 12, 15, 0));
+        BY_NAME.put("PINK_BANNER", new SortKey(1, 12, 16, 0));
+        BY_NAME.put("WHITE_DYE", new SortKey(1, 13, 1, 0));
+        BY_NAME.put("LIGHT_GRAY_DYE", new SortKey(1, 13, 2, 0));
+        BY_NAME.put("GRAY_DYE", new SortKey(1, 13, 3, 0));
+        BY_NAME.put("BLACK_DYE", new SortKey(1, 13, 4, 0));
+        BY_NAME.put("BROWN_DYE", new SortKey(1, 13, 5, 0));
+        BY_NAME.put("RED_DYE", new SortKey(1, 13, 6, 0));
+        BY_NAME.put("ORANGE_DYE", new SortKey(1, 13, 7, 0));
+        BY_NAME.put("YELLOW_DYE", new SortKey(1, 13, 8, 0));
+        BY_NAME.put("LIME_DYE", new SortKey(1, 13, 9, 0));
+        BY_NAME.put("GREEN_DYE", new SortKey(1, 13, 10, 0));
+        BY_NAME.put("CYAN_DYE", new SortKey(1, 13, 11, 0));
+        BY_NAME.put("LIGHT_BLUE_DYE", new SortKey(1, 13, 12, 0));
+        BY_NAME.put("BLUE_DYE", new SortKey(1, 13, 13, 0));
+        BY_NAME.put("PURPLE_DYE", new SortKey(1, 13, 14, 0));
+        BY_NAME.put("MAGENTA_DYE", new SortKey(1, 13, 15, 0));
+        BY_NAME.put("PINK_DYE", new SortKey(1, 13, 16, 0));
         BY_NAME.put("GRASS_BLOCK", new SortKey(2, 0, 0, 0));
         BY_NAME.put("SHORT_GRASS", new SortKey(2, 0, 1, 0));
         BY_NAME.put("SHORT_DRY_GRASS", new SortKey(2, 0, 1, 1));
@@ -693,6 +804,7 @@ public record SortKey(int category, int family, int shape, int modifier) {
         BY_NAME.put("FLOWERING_AZALEA_LEAVES", new SortKey(2, 42, 1, 1));
         BY_NAME.put("RED_MUSHROOM", new SortKey(2, 43, 0, 1));
         BY_NAME.put("BROWN_MUSHROOM", new SortKey(2, 43, 0, 2));
+        BY_NAME.put("SHELF_MUSHROOM", new SortKey(2, 43, 0, 65535));
         BY_NAME.put("RED_MUSHROOM_BLOCK", new SortKey(2, 43, 1, 1));
         BY_NAME.put("BROWN_MUSHROOM_BLOCK", new SortKey(2, 43, 1, 2));
         BY_NAME.put("MUSHROOM_STEM", new SortKey(2, 43, 2, 0));
@@ -811,6 +923,11 @@ public record SortKey(int category, int family, int shape, int modifier) {
         BY_NAME.put("CALIBRATED_SCULK_SENSOR", new SortKey(2, 104, 4, 1));
         BY_NAME.put("COBWEB", new SortKey(2, 105, 0, 0));
         BY_NAME.put("BEDROCK", new SortKey(2, 106, 0, 0));
+        BY_NAME.put("RED_SHRUB", new SortKey(2, 65535, 0, 0));
+        BY_NAME.put("RED_POPLAR_LEAVES", new SortKey(2, 65535, 11, 1));
+        BY_NAME.put("ORANGE_POPLAR_LEAVES", new SortKey(2, 65535, 11, 2));
+        BY_NAME.put("YELLOW_POPLAR_LEAVES", new SortKey(2, 65535, 11, 3));
+        BY_NAME.put("POPLAR_SAPLING", new SortKey(2, 65535, 12, 0));
         BY_NAME.put("TORCH", new SortKey(3, 0, 0, 0));
         BY_NAME.put("SOUL_TORCH", new SortKey(3, 0, 0, 1));
         BY_NAME.put("COPPER_TORCH", new SortKey(3, 0, 0, 2));
@@ -1034,6 +1151,9 @@ public record SortKey(int category, int family, int shape, int modifier) {
         BY_NAME.put("DRAGON_HEAD", new SortKey(3, 57, 0, 5));
         BY_NAME.put("END_PORTAL_FRAME", new SortKey(3, 58, 0, 0));
         BY_NAME.put("VAULT", new SortKey(3, 59, 0, 0));
+        BY_NAME.put("POPLAR_SHELF", new SortKey(3, 65535, 13, 0));
+        BY_NAME.put("POPLAR_SIGN", new SortKey(3, 65535, 14, 0));
+        BY_NAME.put("POPLAR_HANGING_SIGN", new SortKey(3, 65535, 15, 0));
         BY_NAME.put("REDSTONE_BLOCK", new SortKey(4, 0, 1, 0));
         BY_NAME.put("REDSTONE_LAMP", new SortKey(4, 0, 3, 0));
         BY_NAME.put("REPEATER", new SortKey(4, 1, 0, 0));
@@ -1118,6 +1238,22 @@ public record SortKey(int category, int family, int shape, int modifier) {
         BY_NAME.put("CLOCK", new SortKey(5, 13, 0, 0));
         BY_NAME.put("SPYGLASS", new SortKey(5, 14, 0, 0));
         BY_NAME.put("MAP", new SortKey(5, 15, 0, 0));
+        BY_NAME.put("ABANDONED_CAMP_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("BURIED_ANCIENT_CITY_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("BURIED_MINESHAFT_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("BURIED_TREASURE_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("BURIED_TRIAL_CHAMBERS_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("DESERT_PYRAMID_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("DESERT_VILLAGE_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("JUNGLE_PYRAMID_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("OCEAN_MONUMENT_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("PLAINS_VILLAGE_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("SAVANNA_VILLAGE_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("SNOWY_VILLAGE_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("SWAMP_HUT_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("TAIGA_VILLAGE_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("WARM_OCEAN_RUINS_MAP", new SortKey(5, 15, 65535, 0));
+        BY_NAME.put("WOODLAND_MANSION_MAP", new SortKey(5, 15, 65535, 0));
         BY_NAME.put("WIND_CHARGE", new SortKey(5, 16, 0, 0));
         BY_NAME.put("ENDER_PEARL", new SortKey(5, 17, 0, 0));
         BY_NAME.put("ENDER_EYE", new SortKey(5, 17, 0, 1));
@@ -1188,6 +1324,8 @@ public record SortKey(int category, int family, int shape, int modifier) {
         BY_NAME.put("MUSIC_DISC_TEARS", new SortKey(5, 34, 0, 19));
         BY_NAME.put("MUSIC_DISC_LAVA_CHICKEN", new SortKey(5, 34, 0, 20));
         BY_NAME.put("MUSIC_DISC_BOUNCE", new SortKey(5, 34, 0, 21));
+        BY_NAME.put("POPLAR_BOAT", new SortKey(5, 65535, 0, 16));
+        BY_NAME.put("POPLAR_CHEST_BOAT", new SortKey(5, 65535, 0, 17));
         BY_NAME.put("WOODEN_SWORD", new SortKey(6, 0, 0, 1));
         BY_NAME.put("STONE_SWORD", new SortKey(6, 0, 0, 2));
         BY_NAME.put("COPPER_SWORD", new SortKey(6, 0, 0, 3));
@@ -1526,9 +1664,5 @@ public record SortKey(int category, int family, int shape, int modifier) {
         BY_NAME.put("ENDERMITE_SPAWN_EGG", new SortKey(9, 2, 0, 85));
         BY_NAME.put("SHULKER_SPAWN_EGG", new SortKey(9, 2, 0, 86));
         BY_NAME.put("AIR", new SortKey(255, 0, 0, 0));
-    }
-
-    public static Optional<SortKey> byName(String name) {
-        return Optional.ofNullable(BY_NAME.get(name));
     }
 }
